@@ -15,10 +15,20 @@ https://templatemo.com/tm-599-noir-fashion
 	box-sizing: border-box;
 }
 
-:root {
+/* :root {
 	--primary: #0a0a0a;
 	--accent: #ff3366;
 	--accent-hover: #ff1149;
+	--text-light: #ffffff;
+	--text-muted: #999;
+	--bg-dark: #000;
+	--bg-section: #0a0a0a;
+} */
+
+:root {
+	--primary: #0a0a0a;
+	--accent: #33ccff; /* Warna Biru Data (Ganti dari #ff3366) */
+	--accent-hover: #0099cc;
 	--text-light: #ffffff;
 	--text-muted: #999;
 	--bg-dark: #000;
