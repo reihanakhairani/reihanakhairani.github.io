@@ -423,7 +423,7 @@ nav.scrolled {
 .hero-container {
 	height: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 6.5fr 3.5fr;
 	max-width: 1400px;
 	margin: 0 auto;
 	padding: 0 50px;
