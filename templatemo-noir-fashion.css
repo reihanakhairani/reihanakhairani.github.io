@@ -26,13 +26,13 @@ https://templatemo.com/tm-599-noir-fashion
 } */
 
 :root {
-	--primary: #0a0a0a;
-	--accent: #33ccff; /* Warna Biru Data (Ganti dari #ff3366) */
-	--accent-hover: #0099cc;
-	--text-light: #ffffff;
-	--text-muted: #999;
-	--bg-dark: #000;
-	--bg-section: #0a0a0a;
+	--primary: #ffffff;       /* Latar belakang jadi putih bersih */
+	--accent: #ADD8E6;        /* Warna aksen utama pakai Biru Muda pilihanmu */
+	--accent-hover: #9accdb;  /* Warna biru yang sedikit lebih gelap saat tombol disentuh kursor */
+	--text-light: #1a1a1a;    /* Teks utama otomatis jadi abu-abu gelap biar kontras di background putih */
+	--text-muted: #666666;    /* Teks deskripsi/sekunder jadi abu-abu sedang */
+	--bg-dark: #ffffff;       /* Latar belakang utama halaman */
+	--bg-section: #f4f9fc;    /* Latar belakang section lain dibikin biru super soft biar estetik */
 }
 
 html {
