@@ -1028,10 +1028,9 @@ nav.scrolled {
 	margin-bottom: 12px;
 }
 
+/* Menghilangkan teks harga dolar di kartu project */
 .card-price {
-	font-size: 18px;
-	color: var(--accent);
-	font-weight: 600;
+    display: none !important;
 }
 
 /* Featured Section */
@@ -1433,9 +1432,9 @@ nav.scrolled {
 .form-group textarea {
 	width: 100%;
 	padding: 15px;
-	background: rgba(255, 255, 255, 0.05);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	color: white;
+	background: #ffffff; /* Ubah jadi putih solid */
+	border: 1px solid #cccccc; /* Garis tepi abu-abu tipis biar kelihatan batas kotaknya */
+	color: #1a1a1a; /* Teks yang diketik berubah jadi warna gelap biar jelas dibaca */
 	font-size: 16px;
 	transition: all 0.3s ease;
 	font-family: 'Arial', sans-serif;
@@ -1444,9 +1443,9 @@ nav.scrolled {
 .form-group input:focus,
 .form-group textarea:focus {
 	outline: none;
-	background: rgba(255, 255, 255, 0.08);
-	border-color: var(--accent);
-	box-shadow: 0 0 20px rgba(255, 51, 102, 0.1);
+	background: #ffffff;
+	border-color: var(--accent); /* Garis tepi otomatis menyala jadi BIRU MUDA pilihanmu */
+	box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Efek glow tipis warna biru muda */
 }
 
 .form-group input::placeholder,
