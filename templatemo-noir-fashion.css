@@ -56,7 +56,7 @@ nav {
 	width: 100%;
 	padding: 20px 50px;
 	z-index: 1000;
-	background: rgba(0, 0, 0, 0.95);
+	background: rgba(255, 255, 255, 0.95);
 	backdrop-filter: blur(10px);
 	animation: slideDown 0.8s ease;
 	transition: all 0.3s ease;
@@ -388,35 +388,55 @@ nav.scrolled {
 	height: 100%;
 	top: 0;
 	left: 0;
+	background-color: #ffffff; /* Dasarnya tetap putih bersih */
+	overflow: hidden;
 }
 
+/* Kobaran Api Kiri */
 .hero-bg::before {
 	content: '';
 	position: absolute;
-	width: 150%;
-	height: 150%;
-	top: -25%;
-	left: -25%;
-	background: conic-gradient(from 180deg at 50% 50%, #ff3366 0deg, #000 60deg, #ff3366 120deg, #000 180deg, #ff3366 240deg, #000 300deg, #ff3366 360deg);
-	animation: spin 20s linear infinite;
-	opacity: 0.15;
+	width: 800px;
+	height: 800px;
+	top: -200px;
+	left: -200px;
+	background: radial-gradient(circle, rgba(173, 216, 230, 0.7) 0%, rgba(230, 242, 247, 0.4) 50%, rgba(255, 255, 255, 0) 70%);
+	border-radius: 43% 57% 70% 30% / 45% 45% 55% 55%; /* Bikin bentuknya gak simetris kayak lidah api */
+	animation: flameMovement 12s linear infinite alternate;
+	filter: blur(40px); /* Biar haluuus banget blending-nya */
 }
 
+/* Kobaran Api Kanan */
 .hero-bg::after {
 	content: '';
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+	width: 700px;
+	height: 700px;
+	bottom: -150px;
+	right: -100px;
+	background: radial-gradient(circle, rgba(173, 216, 230, 0.6) 0%, rgba(240, 248, 255, 0.4) 60%, rgba(255, 255, 255, 0) 80%);
+	border-radius: 50% 40% 60% 40% / 40% 50% 40% 60%;
+	animation: flameMovement 18s linear infinite alternate-reverse;
+	filter: blur(50px);
 }
 
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
+/* Animasi liukan api yang bergerak dan berubah bentuk otomatis */
+@keyframes flameMovement {
+	0% {
+		transform: translate(0, 0) rotate(0deg) scale(1);
+		border-radius: 43% 57% 70% 30% / 45% 45% 55% 55%;
 	}
-
-	to {
-		transform: rotate(360deg);
+	33% {
+		transform: translate(50px, 40px) rotate(30deg) scale(1.1);
+		border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+	}
+	66% {
+		transform: translate(-30px, 60px) rotate(-20deg) scale(0.95);
+		border-radius: 50% 50% 30% 70% / 60% 30% 70% 40%;
+	}
+	100% {
+		transform: translate(20px, -20px) rotate(15deg) scale(1.05);
+		border-radius: 43% 57% 70% 30% / 45% 45% 55% 55%;
 	}
 }
 
@@ -586,8 +606,9 @@ nav.scrolled {
 }
 
 .cta-button.primary {
-	background: var(--accent);
-	color: white;
+    background: var(--accent);
+    color: #1a1a1a !important; /* Memaksa tulisan di dalam tombol biru muda jadi gelap biar kebaca */
+    font-weight: 600;
 }
 
 .cta-button.primary::before {
