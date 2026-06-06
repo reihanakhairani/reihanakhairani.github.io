@@ -1894,49 +1894,50 @@ footer {
 		text-align: center;
 	}
 }
-
 /* ==========================================================================
-   FIX TOTAL: ANIMATION DROP MURNI (ANTI MUKA GEPENG & STRETCH)
+   VERSION PREMIUM: ANIMASI LANYARD JATUH SUPER SMOOTH & BERBOBOT
    ========================================================================== */
 .lanyard-container {
+    /* Mengaktifkan akselerasi hardware biar render gerakan di browser super mulus */
+    will-change: transform, opacity;
     backface-visibility: hidden;
     -webkit-font-smoothing: subpixel-antialiased;
     transform-origin: top center;
     
-    /* Efek jatuh menyentak keras + sisa ayunan alami */
-    animation: lanyardPerfectDrop 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both,
-               lanyardPerfectSwing 6s infinite ease-in-out 1.5s;
+    /* Kecepatan jatuhnya kita haluskan jadi 1.6 detik dengan transisi kurva aerodinamis */
+    animation: lanyardSmoothDrop 1.6s cubic-bezier(0.22, 1, 0.36, 1) both,
+               lanyardPerfectSwing 8s infinite ease-in-out 1.6s;
 }
 
-/* MANTRA JATUH MENYENTAK (Hanya main koordinat Y dan rotasi, NO SCALE!) */
-@keyframes lanyardPerfectDrop {
+/* 1. EFEK MANTUL REALISTIS & HALUS (SAY NO TO PATAH-PATAH!) */
+@keyframes lanyardSmoothDrop {
     0% {
         opacity: 0;
-        transform: translateY(-400px) rotate(-6deg); /* Muncul jauh dari atas */
+        transform: translateY(-350px) rotateX(15deg) rotate(-5deg);
     }
-    35% {
+    45% {
         opacity: 1;
-        transform: translateY(30px) rotate(5deg); /* Hantaman jatuh pertama melewati batas */
+        transform: translateY(20px) rotateX(-8deg) rotate(4deg); /* Hantaman bawah pertama melambat halus */
     }
-    55% {
-        transform: translateY(-15px) rotate(-3deg); /* Mentel balik ke atas */
+    65% {
+        transform: translateY(-10px) rotateX(4deg) rotate(-2deg); /* Membal naik tanpa kejutan kaku */
     }
-    75% {
-        transform: translateY(8px) rotate(1.5deg); /* Turun lagi dikit */
+    82% {
+        transform: translateY(4px) rotateX(-2deg) rotate(1deg); /* Redaman pantulan kedua */
     }
-    90% {
-        transform: translateY(-2px) rotate(-0.5deg); /* Pantulan terakhir */
+    92% {
+        transform: translateY(-1px) rotateX(0.5deg) rotate(-0.3deg); /* Sisa getaran kecil */
     }
     100% {
-        transform: translateY(0) rotate(0); /* Diam sempurna, proporsi foto normal */
+        transform: translateY(0) rotateX(0) rotate(0); /* Selesai, diam sempurna */
     }
 }
 
-/* MANTRA AYUNAN ANGIN (Sangat halus setelah jatuh selesai) */
+/* 2. AYUNAN SAYUP-SAYUP DI TIUP ANGIN (Lebih lambat & rileks) */
 @keyframes lanyardPerfectSwing {
     0% { transform: rotate(0deg); }
-    25% { transform: rotate(1deg); }
-    75% { transform: rotate(-1deg); }
+    25% { transform: rotate(0.8deg); }  /* Ayunan kita perkecil biar gak pusing melihatnya */
+    75% { transform: rotate(-0.8deg); }
     100% { transform: rotate(0deg); }
 }
 
