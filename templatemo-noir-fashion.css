@@ -1896,27 +1896,46 @@ footer {
 }
 
 /* ==========================================================================
-   MANTRA JATUH MURNI - ANTI MUKA GEPENG (ZOOM FIX)
+   FIX TOTAL: ANIMATION DROP MURNI (ANTI MUKA GEPENG & STRETCH)
    ========================================================================== */
-@keyframes lanyardRealDrop {
+.lanyard-container {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform-origin: top center;
+    
+    /* Efek jatuh menyentak keras + sisa ayunan alami */
+    animation: lanyardPerfectDrop 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both,
+               lanyardPerfectSwing 6s infinite ease-in-out 1.5s;
+}
+
+/* MANTRA JATUH MENYENTAK (Hanya main koordinat Y dan rotasi, NO SCALE!) */
+@keyframes lanyardPerfectDrop {
     0% {
         opacity: 0;
-        transform: translateY(-400px) rotate(-8deg); /* Jatuh murni tanpa scaleY */
+        transform: translateY(-400px) rotate(-6deg); /* Muncul jauh dari atas */
     }
-    30% {
+    35% {
         opacity: 1;
-        transform: translateY(35px) rotate(6deg); /* Hantaman bawah pertama */
+        transform: translateY(30px) rotate(5deg); /* Hantaman jatuh pertama melewati batas */
     }
-    50% {
-        transform: translateY(-20px) rotate(-4deg); /* Membal naik ke atas */
+    55% {
+        transform: translateY(-15px) rotate(-3deg); /* Mentel balik ke atas */
     }
-    70% {
-        transform: translateY(12px) rotate(2deg); /* Membal turun dikit */
+    75% {
+        transform: translateY(8px) rotate(1.5deg); /* Turun lagi dikit */
     }
-    85% {
-        transform: translateY(-4px) rotate(-1deg); /* Pantulan kecil terakhir */
+    90% {
+        transform: translateY(-2px) rotate(-0.5deg); /* Pantulan terakhir */
     }
     100% {
-        transform: translateY(0) rotate(0); /* Selesai, diam proporsional */
+        transform: translateY(0) rotate(0); /* Diam sempurna, proporsi foto normal */
     }
+}
+
+/* MANTRA AYUNAN ANGIN (Sangat halus setelah jatuh selesai) */
+@keyframes lanyardPerfectSwing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
 }
