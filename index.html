@@ -512,6 +512,21 @@ https://templatemo.com/tm-599-noir-fashion
             </div>
         </div>
     </div>
+
+    <script>
+        function openPreview(title, previewUrl) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('previewIframe').src = previewUrl;
+            // Link GDrive asli dibuat otomatis dengan mengganti kata /preview kembali ke /view
+            document.getElementById('modalDriveLink').href = previewUrl.replace('/preview', '/view?usp=share_link');
+            document.getElementById('previewModal').style.display = 'flex';
+        }
+
+        function closePreview() {
+            document.getElementById('previewModal').style.display = 'none';
+            document.getElementById('previewIframe').src = ''; // Bersihkan memori dokumen pas ditutup
+        }
+    </script>
     
     <script src="templatemo-noir-scripts.js"></script>
 </body>
