@@ -1894,3 +1894,24 @@ footer {
 		text-align: center;
 	}
 }
+
+/* ==========================================================================
+   ANIMASI GOYANGAN LANYARD REIHANA (Realistis/Melayang)
+   ========================================================================== */
+.lanyard-container {
+    /* Setelan dasar biar gak pecah saat berayun */
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@keyframes lanyardSwing {
+    0% {
+        transform: rotate(1deg); /* Mulai goyang ke kanan dikit */
+    }
+    50% {
+        transform: rotate(-1deg); /* Goyang ke kiri dikit */
+    }
+    100% {
+        transform: rotate(1deg); /* Kembali ke kanan */
+    }
+}
