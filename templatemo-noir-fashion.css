@@ -1939,3 +1939,48 @@ footer {
     75% { transform: rotate(-1deg); }
     100% { transform: rotate(0deg); }
 }
+
+/* ==========================================================================
+   SISTEM RESPONSIVITAS HERO & LANYARD ANTI-TABRAKAN (MOBILE & TABLET)
+   ========================================================================== */
+@media screen and (max-width: 991px) {
+    /* 1. Paksa area induk container heromu menyusun ke bawah dengan rapi */
+    .hero-container {
+        flex-direction: column !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        gap: 40px !important;
+        padding-top: 120px !important; /* Kasih ruang biar gak mentok navbar */
+    }
+
+    /* 2. Jinakkan area teks kiri biar memenuhi layar tengah */
+    .hero-left {
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .cta-group {
+        justify-content: center !important;
+    }
+
+    /* 3. JINAKKAN LANYARD (Biar talinya gak bocor memotong teks) */
+    .hero-right {
+        max-width: 100% !important;
+        margin-top: 50px !important;
+        padding-top: 0 !important;
+    }
+
+    /* Kita sembunyikan tali atasnya di mobile karena atap layarnya sudah bergeser jauh */
+    .lanyard-strap {
+        height: 100px !important;
+        top: -80px !important;
+    }
+    
+    .lanyard-clip {
+        top: 15px !important;
+    }
+
+    .id-card-wrapper {
+        margin-top: 40px !important;
+    }
+}
