@@ -1896,22 +1896,47 @@ footer {
 }
 
 /* ==========================================================================
-   ANIMASI GOYANGAN LANYARD REIHANA (Realistis/Melayang)
+   ANIMASI FISIKA LANYARD JATUH BEBAS & MEMANTUL KERAS (STRAP LURUS)
    ========================================================================== */
+
 .lanyard-container {
-    /* Setelan dasar biar gak pecah saat berayun */
     backface-visibility: hidden;
     -webkit-font-smoothing: subpixel-antialiased;
+    transform-origin: top center;
+    
+    /* Efek jatuh realistis: Gabungan drop mantul + ayunan sisa */
+    animation: lanyardRealDrop 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both,
+               lanyardNaturalSwing 7s infinite ease-in-out 1.8s;
 }
 
-@keyframes lanyardSwing {
+/* 1. EFEK JATUH + MEMANTUL KARENA BEBAN KARTU */
+@keyframes lanyardRealDrop {
     0% {
-        transform: rotate(1deg); /* Mulai goyang ke kanan dikit */
+        opacity: 0;
+        transform: translateY(-400px) scaleY(1.2) rotate(-8deg); /* Ketarik molor dari atas */
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(35px) scaleY(0.9) rotate(6deg); /* Hantaman jatuh pertama (melewati batas normal) */
     }
     50% {
-        transform: rotate(-1deg); /* Goyang ke kiri dikit */
+        transform: translateY(-20px) scaleY(1.05) rotate(-4deg); /* Memantul balik ke atas agak tinggi */
+    }
+    70% {
+        transform: translateY(12px) scaleY(0.97) rotate(2deg); /* Memantul ke bawah lagi tapi lebih rendah */
+    }
+    85% {
+        transform: translateY(-4px) scaleY(1.01) rotate(-1deg); /* Pantulan kecil terakhir ke atas */
     }
     100% {
-        transform: rotate(1deg); /* Kembali ke kanan */
+        transform: translateY(0) scaleY(1) rotate(0); /* Berhenti jatuh, pasrah di tempat asli */
     }
+}
+
+/* 2. SISA AYUNAN SELESAI JATUH (Angin sepoi-sepoi) */
+@keyframes lanyardNaturalSwing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1.2deg); }   /* Ayun kanan dikit */
+    75% { transform: rotate(-1.2deg); }  /* Ayun kiri dikit */
+    100% { transform: rotate(0deg); }
 }
