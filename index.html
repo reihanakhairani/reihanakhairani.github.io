@@ -121,69 +121,99 @@ https://templatemo.com/tm-599-noir-fashion
         .ticker-container:hover .ticker-wrapper {
             animation-play-state: paused;
         }
+        
+        /* 📐 KUNCI UX: STRUKTUR KOTAK GRID SEPERTI REFERENSI GAMBAR */
         .logo-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            width: 120px;
-            margin: 0 20px;
-            transition: transform 0.3s ease;
+            gap: 10px;
+            width: 130px; /* Lebar kotak diseragamkan */
+            height: 105px; /* Tinggi kotak diseragamkan agar membentuk grid sempurna */
+            transition: all 0.3s ease;
         }
         .logo-item:hover {
-            transform: scale(1.15);
+            transform: scale(1.08);
+            background: rgba(255, 255, 255, 0.05) !important; /* Efek highlight tipis pas kotak disentuh kursor */
         }
+        
+        /* Modifikasi hover pas Dark Mode */
+        body.dark-mode .logo-item:hover,
+        [data-theme="dark"] .logo-item:hover,
+        .dark .logo-item:hover {
+            background: rgba(0, 0, 0, 0.03) !important;
+        }
+
         .logo-item img {
-            height: 36px;
+            height: 32px;
             width: auto;
             object-fit: contain;
+            filter: grayscale(10%) contrast(100%); /* Menjaga warna logo tetap hidup tapi menyatu */
+        }
+        .logo-item span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
         }
         
-        /* 💡 LOGIKA DEWA: OTOMATIS MEMBALIKKAN WARNA ANTAR LIGHT & DARK MODE */
+        /* ==========================================================================
+           LOGIKA WARNA & GARIS PEMBATAS GRID (AUTO LIGHT & DARK MODE)
+           ========================================================================== */
         
-        /* 1. SAAT LIGHT MODE (Website Putih -> Ticker Jadi Navy Gelap Mewah) */
+        /* 1. SAAT LIGHT MODE (Website Putih -> Ticker Navy Gelap + Garis Grid Putih Transparan) */
         .ticker-container {
-            background: #0f172a !important; /* Deep Navy */
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            background: #0f172a !important; /* Deep Corporate Navy */
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
         .ticker-container .ticker-title {
             color: #ffffff !important;
-            background: rgba(255,255,255,0.1) !important;
-            border: 1.5px solid rgba(255,255,255,0.2) !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .ticker-container .logo-item {
+            border-right: 1px solid rgba(255, 255, 255, 0.12); /* Garis grid vertikal */
         }
         .ticker-container .logo-item span {
-            color: #cbd5e1 !important; /* Teks Abu Terang Mentega biar kebaca di background navy */
+            color: #e2e8f0 !important;
         }
 
-        /* 2. SAAT DARK MODE (Website Gelap -> Ticker Berubah Jadi Terang Apple Glassmorphism) */
+        /* 2. SAAT DARK MODE (Website Gelap -> Ticker Kaca Terang + Garis Grid Hitam Transparan) */
         body.dark-mode .ticker-container, 
         [data-theme="dark"] .ticker-container,
         .dark .ticker-container {
-            background: rgba(255, 255, 255, 0.85) !important; /* Putih Susu Semi Transparan */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.88) !important; /* Frosted Light Glass */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
         body.dark-mode .ticker-container .ticker-title,
         [data-theme="dark"] .ticker-container .ticker-title,
         .dark .ticker-container .ticker-title {
-            color: #1a1a1a !important;
-            background: rgba(255, 255, 255, 0.9) !important;
-            border: 1.5px solid #ADD8E6 !important;
+            color: #0f172a !important;
+            background: rgba(0, 0, 0, 0.02) !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        body.dark-mode .ticker-container .logo-item,
+        [data-theme="dark"] .ticker-container .logo-item,
+        .dark .ticker-container .logo-item {
+            border-right: 1px solid rgba(0, 0, 0, 0.08); /* Garis grid vertikal versi gelap */
         }
         body.dark-mode .ticker-container .logo-item span,
         [data-theme="dark"] .ticker-container .logo-item span,
         .dark .ticker-container .logo-item span {
-            color: #2d3748 !important; /* Teks Gelap biar kontras di background terang */
+            color: #1e293b !important;
         }
     </style>
 
-    <div class="ticker-container" style="width: 100%; padding: 25px 0; position: relative; overflow: hidden; z-index: 5; margin-top: -10px; margin-bottom: -10px; transition: all 0.4s ease;">
+    <div class="ticker-container" style="width: 100%; position: relative; overflow: hidden; z-index: 5; margin-top: -10px; margin-bottom: -10px; transition: all 0.4s ease; display: flex; flex-direction: column;">
         
-        <div style="text-align: center; margin-bottom: 18px;">
-            <span class="ticker-title" style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; padding: 6px 18px; border-radius: 50px; display: inline-block; transition: all 0.4s ease;">
-                🛠️ PROFESSIONAL TOOLS & PLATFORMS
+        <div class="ticker-title" style="width: 100%; padding: 15px 25px; text-align: left; transition: all 0.4s ease;">
+            <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.2px;">
+                ⚙️ PROFESSIONAL WORKSTATION & MARKETING TOOLS CAPABILITIES
             </span>
         </div>
 
