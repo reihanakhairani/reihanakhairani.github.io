@@ -674,82 +674,161 @@ https://templatemo.com/tm-599-noir-fashion
         }
     </style>
 
-    <section id="projects" style="padding: 100px 0; background-color: #fafbfc; position: relative; overflow: hidden;">
+    <style>
+        /* Logika dasar: sembunyikan semua project dulu */
+        .simple-project-area { display: none; }
         
-        <input type="radio" id="toggle-digimar" name="tab-proj" checked style="display: none;">
-        <input type="radio" id="toggle-da" name="tab-proj" style="display: none;">
+        /* Kalau tombol diklik, munculkan kategori yang sesuai */
+        #simple-toggle-marketing:checked ~ #simple-area-marketing { display: block !important; }
+        #simple-toggle-analytics:checked ~ #simple-area-analytics { display: block !important; }
 
-        <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+        /* Desain tombol pas aktif */
+        #simple-toggle-marketing:checked ~ .simple-tab-group label[for="simple-toggle-marketing"],
+        #simple-toggle-analytics:checked ~ .simple-tab-group label[for="simple-toggle-analytics"] {
+            background: #1a1a1a !important;
+            color: #ffffff !important;
+            border-color: #1a1a1a !important;
+        }
+
+        /* Desain kotak list project biasa */
+        .simple-project-list-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+        .simple-project-list-item h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #1a1a1a;
+            margin: 0 0 10px 0;
+        }
+        .simple-project-list-item p {
+            font-family: 'Poppins', sans-serif;
+            color: #4a5568;
+            font-size: 13.5px;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+        }
+        .simple-project-list-item span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: #718096;
+        }
+        
+        /* Tombol preview biasa */
+        .simple-btn-preview {
+            display: inline-block;
+            font-family: 'Poppins', sans-serif !important;
+            font-weight: 600;
+            font-size: 12px;
+            color: #1a1a1a;
+            text-decoration: none;
+            border: 1.5px solid #ADD8E6;
+            padding: 8px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 10px;
+            background: transparent;
+        }
+    </style>
+
+    <section id="projects" style="padding: 80px 0; background-color: #fafbfc;">
+        
+        <input type="radio" id="simple-toggle-marketing" name="simple-tabs" checked style="display: none;">
+        <input type="radio" id="simple-toggle-analytics" name="simple-tabs" style="display: none;">
+
+        <div class="container" style="max-width: 850px; margin: 0 auto; padding: 0 20px;">
             
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 34px; color: #1a1a1a; margin-bottom: 12px; letter-spacing: -1px;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 32px; color: #1a1a1a; margin-bottom: 8px; letter-spacing: -1px;">
                     Featured Projects
                 </h2>
-                <p style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #718096; font-weight: 500;">Select a category to explore my works</p>
+                <div style="width: 45px; height: 4px; background-color: #ADD8E6; border-radius: 2px; margin: 0 auto 15px auto;"></div>
+                <p style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #718096; margin: 0;">Select a category to view projects</p>
             </div>
 
-            <div class="tab-group" style="display: flex; justify-content: center; gap: 15px; margin-bottom: 30px;">
-                <label for="toggle-digimar" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid rgba(0,0,0,0.08); padding: 12px 28px; border-radius: 50px; cursor: pointer; transition: all 0.3s ease;">
+            <div class="simple-tab-group" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 40px;">
+                <label for="simple-toggle-marketing" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 10px 24px; border-radius: 8px; cursor: pointer;">
                     📢 Digital Marketing
                 </label>
-                <label for="toggle-da" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid rgba(0,0,0,0.08); padding: 12px 28px; border-radius: 50px; cursor: pointer; transition: all 0.3s ease;">
+                <label for="simple-toggle-analytics" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 10px 24px; border-radius: 8px; cursor: pointer;">
                     📊 Data Analytics
                 </label>
             </div>
 
-            <div class="projects-viewport">
+            <div id="simple-area-marketing" class="simple-project-area">
                 
-                <div id="area-digimar" class="project-content-area slider-track">
-                    
-                    <div class="apple-project-card">
-                        <div>
-                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin-bottom: 12px;">Social Media Planning & Report</h3>
-                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">Formulated data-driven content architectures and multi-platform briefs based on audience profiling. Evaluated resonance by monitoring KPI and ER.</p>
-                            <span style="font-family: 'Poppins', sans-serif; font-size: 10px; font-weight: 800; color: #ADD8E6; letter-spacing: 1px;">INSTAGRAM • TIKTOK • CANVA</span>
-                        </div>
-                        <div style="display: flex; gap: 10px; margin-top: 25px;">
-                            <a href="javascript:void(0)" onclick="openPreview('Social Media Planning', 'https://drive.google.com/file/d/1iZjkMnkNwcFmLNYxuZDjzklqA7mxWKvU/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 700; font-size: 10px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px; border-radius: 50px;">PLANNING 📜</a>
-                            <a href="javascript:void(0)" onclick="openPreview('Social Media Reporting', 'https://drive.google.com/file/d/1dfgpyW98k3PJK63vDyHJi2x6aCyLmv5R/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 700; font-size: 10px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px; border-radius: 50px;">REPORT 📊</a>
-                        </div>
-                    </div>
-
-                    <div class="apple-project-card">
-                        <div>
-                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin-bottom: 12px;">Paid Ads & Store Optimization</h3>
-                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">Managed ad lifecycles on Meta, Google, and Shopee. Combined funnel mapping with periodic budget reallocation to maximize ROI.</p>
-                            <span style="font-family: 'Poppins', sans-serif; font-size: 10px; font-weight: 800; color: #ADD8E6; letter-spacing: 1px;">META • GOOGLE • SHOPEE ADS</span>
-                        </div>
-                        <div style="display: flex; gap: 10px; margin-top: 25px;">
-                            <a href="javascript:void(0)" onclick="openPreview('Paid Ads Planning', 'https://drive.google.com/file/d/1rcgyMY9hiWSgs4mSbV7tHWQ1zvrN4iwl/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 700; font-size: 10px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px; border-radius: 50px;">PLANNING 🎯</a>
-                            <a href="javascript:void(0)" onclick="openPreview('Ads Optimization', 'https://drive.google.com/file/d/1PGpw9P29McPupG-tpM1PwZ30642ahY-h/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 700; font-size: 10px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px; border-radius: 50px;">OPTIMIZE 📈</a>
-                        </div>
-                    </div>
-
-                    <div class="apple-project-card">
-                        <div>
-                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin-bottom: 12px;">Retention & CRM Marketing</h3>
-                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">Engineered multi-channel retention journey from Awareness to Advocacy. Integrated Push Notifications & Email architectures.</p>
-                            <span style="font-family: 'Poppins', sans-serif; font-size: 10px; font-weight: 800; color: #ADD8E6; letter-spacing: 1px;">MAILCHIMP • WEBPUSHR • CRM</span>
-                        </div>
-                        <div style="margin-top: 25px;">
-                            <a href="javascript:void(0)" onclick="openPreview('CRM Retention Journey', 'https://drive.google.com/file/d/1sQgWHxduRoxPTAVSub8zJX-FD-t5qnqQ/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 700; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 10px; border-radius: 50px;">VIEW STRATEGY 📱</a>
-                        </div>
-                    </div>
-
+                <div class="simple-project-list-item">
+                    <h3>Social Media Planning & Report</h3>
+                    <p>Formulated data-driven content architectures and multi-platform briefs based on audience profiling. Evaluated resonance by monitoring KPI and ER.</p>
+                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Instagram, TikTok, Canva</span></div>
+                    <a href="javascript:void(0)" onclick="openPreview('Social Media Planning', 'https://drive.google.com/file/d/1iZjkMnkNwcFmLNYxuZDjzklqA7mxWKvU/preview')" class="simple-btn-preview">Planning Deck 📜</a>
+                    <a href="javascript:void(0)" onclick="openPreview('Social Media Reporting', 'https://drive.google.com/file/d/1dfgpyW98k3PJK63vDyHJi2x6aCyLmv5R/preview')" class="simple-btn-preview">Report Deck 📊</a>
                 </div>
 
-                <div id="area-da" class="project-content-area slider-track">
-                    
-                    <div class="apple-project-card">
-                        <div>
-                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin-bottom: 12px;">PaDi UMKM Segmentation</h3>
-                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; line-height: 1.5; margin-bottom: 15px;">Identified 26% AOV decline and mapped supplier gaps. Used K-Means Clustering to segment sellers & buyers into performance personas.</p>
-                            <span style="font-family: 'Poppins', sans-serif; font-size: 10px; font-weight: 800; color: #ADD8E6; letter-spacing: 1px;">SQL • PYTHON • TABLEAU</span>
-                        </div>
-                        <div style="margin-top: 25px;">
-                            <a href="https://docs.google.com/presentation/d/1JC52_9DIdAQorhxcVDy1no7ul3NGl--YSuN-NMEBiL4/edit?usp=sharing" target="_blank" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 700; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 10px; border-radius: 50px;">OPEN CASE STUDY 📊</a>
-                        </div>
-                    </div>
+                <div class="simple-project-list-item">
+                    <h3>Paid Ads & Store Optimization</h3>
+                    <p>Managed ad lifecycles on Meta, Google, and Shopee. Combined funnel mapping with periodic budget reallocation to maximize ROI.</p>
+                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Meta Ads, Google Ads, Shopee Ads, Canva</span></div>
+                    <a href="javascript:void(0)" onclick="openPreview('Paid Ads Planning', 'https://drive.google.com/file/d/1rcgyMY9hiWSgs4mSbV7tHWQ1zvrN4iwl/preview')" class="simple-btn-preview">Ads Planning 🎯</a>
+                    <a href="javascript:void(0)" onclick="openPreview('Ads Optimization', 'https://drive.google.com/file/d/1PGpw9P29McPupG-tpM1PwZ30642ahY-h/preview')" class="simple-btn-preview">Optimization 📈</a>
+                </div>
+
+                <div class="simple-project-list-item">
+                    <h3>Retention & CRM Marketing</h3>
+                    <p>Engineered multi-channel retention journey from Awareness to Advocacy. Integrated Push Notifications & Email architectures.</p>
+                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Mailchimp, WebPushr CRM</span></div>
+                    <a href="javascript:void(0)" onclick="openPreview('CRM Retention Journey', 'https://drive.google.com/file/d/1sQgWHxduRoxPTAVSub8zJX-FD-t5qnqQ/preview')" class="simple-btn-preview">View Strategy 📱</a>
+                </div>
+
+            </div>
+
+            <div id="simple-area-analytics" class="simple-project-area">
+                
+                <div class="simple-project-list-item">
+                    <h3>Customer Segmentation PaDi UMKM</h3>
+                    <p>Identified 26% AOV decline and mapped supplier gaps. Used K-Means Clustering to segment sellers & buyers into performance personas.</p>
+                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: SQL, Python, Tableau</span></div>
+                    <a href="javascript:void(0)" onclick="openPreview('PaDi UMKM Customer Segmentation', 'https://docs.google.com/presentation/d/1JC52_9DIdAQorhxcVDy1no7ul3NGl--YSuN-NMEBiL4/preview')" class="simple-btn-preview">Open Case Study 📊</a>
+                </div>
+
+                <div class="simple-project-list-item">
+                    <h3>Sociolla Brand Analysis</h3>
+                    <p>Conducted Correlation & Regression analysis to identify success metrics. Clustered brands into 4 distinct groups for marketing optimization.</p>
+                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Python, Tableau, Spreadsheets</span></div>
+                    <a href="javascript:void(0)" onclick="openPreview('Sociolla Brand Engagement Audit', 'https://drive.google.com/file/d/1mDNm1vM2QgrD250bbYhmku300aQxXH1P/preview')" class="simple-btn-preview">View Analysis 📈</a>
+                </div>
+
+                <div class="simple-project-list-item">
+                    <h3>TokoBli Twin-Date Audit</h3>
+                    <p>Analyzed cost efficiency across 10/10, 11/11, and 12/12 mega campaigns. Evaluated revenue balance against flash sale costs.</p>
+                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Spreadsheet, Pivot Engine</span></div>
+                    <a href="javascript:void(0)" onclick="openPreview('TokoBli Campaign Insights', 'https://drive.google.com/file/d/17A1hlAvaxFfNTEJus_dZXCX6Xe-xr8wq/preview')" class="simple-btn-preview">View Guideline 📑</a>
+                </div>
+
+                <div class="simple-project-list-item">
+                    <h3>Wishful Bazaar Analytics</h3>
+                    <p>Used Tableau for end-to-end cleansing and dashboard creation. Optimized strategic decisions to target high-income segments.</p>
+                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Tableau Business Suite</span></div>
+                    <a href="javascript:void(0)" onclick="openPreview('Wishful Bazaar Operational Insights', 'https://drive.google.com/file/d/1VurWmpofaLcHc4De4Yl2-b9l5NlsUM_q/preview')" class="simple-btn-preview">View Dashboard 🖥️</a>
+                </div>
+
+                <div class="simple-project-list-item">
+                    <h3>RevoBank Sales Segment</h3>
+                    <p>Applied RFM and K-means Clustering to segment 4 bank customer personas. Revealed loyalty loops for credit card acquisition growth.</p>
+                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Python Analysis Engine</span></div>
+                    <a href="javascript:void(0)" onclick="openPreview('RevoBank Customer Persona Guide', 'https://drive.google.com/file/d/1LV83JZmNxWstzD8ANHIsl9eG9gOOB-0/preview')" class="simple-btn-preview">View Persona Study 💳</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
     
 
