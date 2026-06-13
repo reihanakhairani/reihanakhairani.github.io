@@ -541,150 +541,213 @@ https://templatemo.com/tm-599-noir-fashion
     </section>
 
 
-    <section id="projects" style="padding: 100px 0; background-color: #ffffff; border-bottom: 1px solid #f0f0f0; position: relative; overflow: hidden;">
+    <style>
+        /* 💡 LOGIKA CSS MURNI UNTUK SWITCH TAB BUTTONS */
+        .tab-content-wrapper { display: none; }
+        #tab-marketing:checked ~ .projects-slider-container #content-marketing,
+        #tab-analytics:checked ~ .projects-slider-container #content-analytics { 
+            display: flex !important; 
+        }
+        
+        /* Setelan warna tombol pas aktif diklik */
+        #tab-marketing:checked ~ .tab-button-group label[for="tab-marketing"],
+        #tab-analytics:checked ~ .tab-button-group label[for="tab-analytics"] {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            border-color: #0f172a !important;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+        }
+
+        /* 📐 REL SLIDER GESER HORIZONTAL (SWIPE CAROUSEL) */
+        .slider-track {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 20px 5px 30px 5px;
+            width: 100%;
+            scrollbar-width: thin; /* Untuk Firefox */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* Biar scroll di iPhone super smooth */
+        }
+        /* Desain Scrollbar Tipis ala Apple Biar Cantik */
+        .slider-track::-webkit-scrollbar { height: 6px; }
+        .slider-track::-webkit-scrollbar-track { background: rgba(0,0,0,0.03); border-radius: 10px; }
+        .slider-track::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
+        .slider-track::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
+
+        /* KARTU PROJECT INDIVIDUAL */
+        .project-apple-card {
+            flex: 0 0 320px; /* Kunci lebar kartu pas digeser biar gak menyusut */
+            scroll-snap-align: start;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        .project-apple-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+            border-color: #ADD8E6;
+        }
+    </style>
+
+    <section id="projects" style="padding: 100px 0; background-color: #fafbfc; border-bottom: 1px solid #f0f0f0; position: relative; overflow: hidden;">
+        
+        <input type="radio" id="tab-marketing" name="project-tabs" checked style="display: none;">
+        <input type="radio" id="tab-analytics" name="project-tabs" style="display: none;">
+
         <div class="container" style="max-width: 1050px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2;">
             
-            <div style="margin-bottom: 60px; text-align: left;">
+            <div style="margin-bottom: 40px; text-align: left;">
                 <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 34px; color: #1a1a1a; margin-bottom: 8px; letter-spacing: -1px;">
-                    Featured Portfolio Projects
+                    Featured Projects
                 </h2>
                 <div style="width: 50px; height: 4px; background-color: #ADD8E6; border-radius: 2px;"></div>
             </div>
 
-            <div style="width: 100%; padding: 15px 25px; background: #0f172a; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.15); transition: all 0.4s ease; margin-bottom: 0;">
-                <span style="font-family: 'Poppins', sans-serif !important; font-size: 11px; font-weight: 700; color: #ffffff; letter-spacing: 1.2px;">
-                    🚀 DIGITAL MARKETING PERFORMANCE SUITE
-                </span>
+            <div class="tab-button-group" style="display: flex; gap: 12px; margin-bottom: 40px; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 20px;">
+                <label for="tab-marketing" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid rgba(0,0,0,0.08); padding: 10px 24px; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; user-select: none;">
+                    📢 Digital Marketing
+                </label>
+                <label for="tab-analytics" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid rgba(0,0,0,0.08); padding: 10px 24px; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; user-select: none;">
+                    📊 Data Analytics
+                </label>
             </div>
-            
-            <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: stretch; width: 100%; border-bottom: 1px solid rgba(0, 0, 0, 0.08); margin-bottom: 60px;">
+
+            <div class="projects-slider-container" style="width: 100%;">
                 
-                <div style="flex: 1 1 300px; max-width: 340px; padding: 35px 30px; border-right: 1px solid rgba(0, 0, 0, 0.08); border-left: 1px solid rgba(0, 0, 0, 0.04); display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box;">
-                    <div style="display: flex; flex-direction: column; gap: 14px;">
-                        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.3;">Social Media Planning & Reporting</h3>
-                        <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
-                            <b>Executive Summary:</b> Formulated data-driven content architectures and multi-platform briefs based on audience profiling and competitor benchmarking. Evaluated content resonance by monitoring KPIs and Engagement Rates (ER) to isolate high-performing creative formulas.
-                        </p>
-                        <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #718096; margin: 0;">🛠️ Instagram, TikTok, Canva Pro</p>
+                <div id="content-marketing" class="tab-content-wrapper slider-track">
+                    
+                    <div class="project-apple-card">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.35;">Social Media Planning & Reporting</h3>
+                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
+                                Formulated data-driven content architectures and multi-platform briefs based on audience profiling and competitor benchmarking. Evaluated content resonance by monitoring KPIs and Engagement Rates (ER) to isolate high-performing creative formulas.
+                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #718096; margin: 0; letter-spacing: 0.3px;">🛠️ INSTAGRAM, TIKTOK, CANVA</p>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 25px;">
+                            <a href="javascript:void(0)" onclick="openPreview('Social Media Campaign Planning', 'https://drive.google.com/file/d/1iZjkMnkNwcFmLNYxuZDjzklqA7mxWKvU/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 5px; border-radius: 50px; background: transparent; white-space: nowrap;">Planning Deck 📜</a>
+                            <a href="javascript:void(0)" onclick="openPreview('Social Media Campaign Report', 'https://drive.google.com/file/d/1dfgpyW98k3PJK63vDyHJi2x6aCyLmv5R/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 5px; border-radius: 50px; background: transparent; white-space: nowrap;">Report Deck 📊</a>
+                        </div>
                     </div>
-                    <div style="display: flex; gap: 10px; margin-top: 25px;">
-                        <a href="javascript:void(0)" onclick="openPreview('Social Media Campaign Planning', 'https://drive.google.com/file/d/1iZjkMnkNwcFmLNYxuZDjzklqA7mxWKvU/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 5px; border-radius: 50px; background: transparent; white-space: nowrap;">Planning Deck 📜</a>
-                        <a href="javascript:void(0)" onclick="openPreview('Social Media Campaign Report', 'https://drive.google.com/file/d/1dfgpyW98k3PJK63vDyHJi2x6aCyLmv5R/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 5px; border-radius: 50px; background: transparent; white-space: nowrap;">Report Deck 📊</a>
+
+                    <div class="project-apple-card">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.35;">Paid Ads & E-Commerce Store Optimization</h3>
+                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
+                                Managed multi-channel ad lifecycles across Meta, Google, and Shopee. Combined full-funnel budget planning, copy creation, and periodic segment refinement to optimize ROI, paired with complete product SEO catalog architectures to secure high conversion rates.
+                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #718096; margin: 0; letter-spacing: 0.3px;">🛠️ META ADS, GOOGLE ADS, SHOPEE ADS, CANVA</p>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 25px;">
+                            <a href="javascript:void(0)" onclick="openPreview('Paid Ads Funnel Planning', 'https://drive.google.com/file/d/1rcgyMY9hiWSgs4mSbV7tHWQ1zvrN4iwl/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 5px; border-radius: 50px; background: transparent; white-space: nowrap;">Ads Planning 🎯</a>
+                            <a href="javascript:void(0)" onclick="openPreview('Paid Ads Optimization Framework', 'https://drive.google.com/file/d/1PGpw9P29McPupG-tpM1PwZ30642ahY-h/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 5px; border-radius: 50px; background: transparent; white-space: nowrap;">Optimization 📈</a>
+                        </div>
                     </div>
+
+                    <div class="project-apple-card">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.35;">Retention Funnel & CRM Marketing</h3>
+                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
+                                Engineered multi-channel retention lifecycles mapping flows from Awareness down to Advocacy. Integrated automated web push notifications and segmented email architectures to cultivate user conversion behavior and foster long-term customer engagement.
+                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #718096; margin: 0; letter-spacing: 0.3px;">🛠️ MAILCHIMP, WEBPUSHR CRM</p>
+                        </div>
+                        <div style="margin-top: 25px;">
+                            <a href="javascript:void(0)" onclick="openPreview('CRM Retention Journey Mapping', 'https://drive.google.com/file/d/1sQgWHxduRoxPTAVSub8zJX-FD-t5qnqQ/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
+                                View CRM Strategy 📱
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div style="flex: 1 1 300px; max-width: 340px; padding: 35px 30px; border-right: 1px solid rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box;">
-                    <div style="display: flex; flex-direction: column; gap: 14px;">
-                        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.3;">Paid Ads & E-Commerce Store Optimization</h3>
-                        <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
-                            <b>Executive Summary:</b> Managed multi-channel ad lifecycles across Meta, Google, and Shopee. Combined full-funnel budget planning, copy creation, and periodic segment refinement to optimize ROI, paired with complete product SEO catalog architectures to secure high conversion rates.
-                        </p>
-                        <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #718096; margin: 0;">🛠️ Meta Ads, Google Ads, Shopee Ads, Canva</p>
+                <div id="content-analytics" class="tab-content-wrapper slider-track">
+                    
+                    <div class="project-apple-card">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.35;">Customer Segmentation PaDi UMKM</h3>
+                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
+                                Analyzed a 26% AOV decline and mapped supplier mismatches across marketplace categories. Deployed Python K-Means Clustering to segment accounts into core performance personas, establishing conversion levers monitored via Tableau dashboards.
+                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #718096; margin: 0; letter-spacing: 0.3px;">🛠️ SQL, PYTHON, TABLEAU</p>
+                        </div>
+                        <div style="margin-top: 25px;">
+                            <a href="https://docs.google.com/presentation/d/1JC52_9DIdAQorhxcVDy1no7ul3NGl--YSuN-NMEBiL4/edit?usp=sharing" target="_blank" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
+                                Open Google Slides 📊
+                            </a>
+                        </div>
                     </div>
-                    <div style="display: flex; gap: 10px; margin-top: 25px;">
-                        <a href="javascript:void(0)" onclick="openPreview('Paid Ads Funnel Planning', 'https://drive.google.com/file/d/1rcgyMY9hiWSgs4mSbV7tHWQ1zvrN4iwl/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 5px; border-radius: 50px; background: transparent; white-space: nowrap;">Ads Planning 🎯</a>
-                        <a href="javascript:void(0)" onclick="openPreview('Paid Ads Optimization Framework', 'https://drive.google.com/file/d/1PGpw9P29McPupG-tpM1PwZ30642ahY-h/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 5px; border-radius: 50px; background: transparent; white-space: nowrap;">Optimization 📈</a>
-                    </div>
-                </div>
 
-                <div style="flex: 1 1 300px; max-width: 340px; padding: 35px 30px; border-right: 1px solid rgba(0, 0, 0, 0.04); display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box;">
-                    <div style="display: flex; flex-direction: column; gap: 14px;">
-                        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.3;">Retention Funnel & CRM Marketing</h3>
-                        <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
-                            <b>Executive Summary:</b> Engineered multi-channel retention lifecycles mapping flows from Awareness down to Advocacy. Integrated automated web push notifications and segmented email architectures to cultivate user conversion behavior and foster long-term customer engagement.
-                        </p>
-                        <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #718096; margin: 0;">🛠️ Mailchimp, WebPushr CRM</p>
+                    <div class="project-apple-card">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.35;">Sociolla Brand Performance Analysis</h3>
+                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
+                                Evaluated beauty cosmetics engagement across platforms. Executed Python Correlation, Linear Regression, and Composite Score Rankings to identify reviews and wishlists as primary conversion metrics, visualized natively in Tableau.
+                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #718096; margin: 0; letter-spacing: 0.3px;">🛠️ PYTHON, TABLEAU, SPREADSHEETS</p>
+                        </div>
+                        <div style="margin-top: 25px;">
+                            <a href="javascript:void(0)" onclick="openPreview('Sociolla Brand Engagement Audit', 'https://drive.google.com/file/d/1mDNm1vM2QgrD250bbYhmku300aQxXH1P/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
+                                View Analytical Case 📈
+                            </a>
+                        </div>
                     </div>
-                    <div style="margin-top: 25px;">
-                        <a href="javascript:void(0)" onclick="openPreview('CRM Retention Journey Mapping', 'https://drive.google.com/file/d/1sQgWHxduRoxPTAVSub8zJX-FD-t5qnqQ/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
-                            View CRM Strategy 📱
-                        </a>
-                    </div>
-                </div>
 
-            </div>
+                    <div class="project-apple-card">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.35;">TokoBli Twin-Date Campaign Audit</h3>
+                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
+                                Evaluated cost efficiency ratios across massive double-date mega sales (10/10, 11/11, 12/12). Leveraged data pivot engines to balance revenue spikes against acquisition costs, isolating the 12/12 strategy as a scaling blueprint.
+                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #718096; margin: 0; letter-spacing: 0.3px;">🛠️ ADVANCED EXCEL / SPREADSHEETS</p>
+                        </div>
+                        <div style="margin-top: 25px;">
+                            <a href="javascript:void(0)" onclick="openPreview('TokoBli Campaign Performance Analysis', 'https://drive.google.com/file/d/17A1hlAvaxFfNTEJus_dZXCX6Xe-xr8wq/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
+                                View Campaign Guide 📊
+                            </a>
+                        </div>
+                    </div>
 
-            <div style="width: 100%; padding: 15px 25px; background: #0f172a; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.15); transition: all 0.4s ease; margin-bottom: 0;">
-                <span style="font-family: 'Poppins', sans-serif !important; font-size: 11px; font-weight: 700; color: #ffffff; letter-spacing: 1.2px;">
-                    📊 ADVANCED DATA ANALYTICS & BUSINESS INTELLIGENCE GRID
-                </span>
-            </div>
+                    <div class="project-apple-card">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.35;">Wishful Bazaar: Sales Trends & Dashboard</h3>
+                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
+                                Deployed Tableau for end-to-end data cleansing, structural normalization, and business dashboard architecture. Analyzed order flows and checkout preferences to isolate high-income brackets, providing data transparency for market optimization.
+                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #718096; margin: 0; letter-spacing: 0.3px;">🛠️ TABLEAU BUSINESS SUITE</p>
+                        </div>
+                        <div style="margin-top: 25px;">
+                            <a href="javascript:void(0)" onclick="openPreview('Wishful Bazaar Operational Insights', 'https://drive.google.com/file/d/1VurWmpofaLcHc4De4Yl2-b9l5NlsUM_q/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
+                                View Tableau Study 🖥️
+                            </a>
+                        </div>
+                    </div>
 
-            <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: stretch; width: 100%;">
-                
-                <div style="flex: 1 1 300px; max-width: 340px; padding: 35px 30px; border-right: 1px solid rgba(0, 0, 0, 0.08); border-left: 1px solid rgba(0, 0, 0, 0.04); border-bottom: 1px solid rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box;">
-                    <div style="display: flex; flex-direction: column; gap: 14px;">
-                        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.3;">Customer Segmentation of PaDi UMKM</h3>
-                        <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.5;">
-                            Analyzed a 26% AOV decline and mapped supplier mismatches across marketplace categories. Deployed Python <b>K-Means Clustering</b> to segment accounts into core performance personas, establishing conversion levers monitored via Tableau dashboards.
-                        </p>
-                        <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #718096; margin: 0;">🛠️ SQL, Python, Tableau</p>
+                    <div class="project-apple-card">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.35;">RevoBank Sales Insights & Clustering</h3>
+                            <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.6;">
+                                Applied Python RFM modeling and K-means Clustering variables to segment commercial banking record lines into four bespoke customer personas. Identified growth loops for tailored loyalty initiatives to increase credit card acquisition.
+                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #718096; margin: 0; letter-spacing: 0.3px;">🛠️ PYTHON ANALYSIS ENGINE</p>
+                        </div>
+                        <div style="margin-top: 25px;">
+                            <a href="javascript:void(0)" onclick="openPreview('RevoBank Customer Segments Guide', 'https://drive.google.com/file/d/1LV83JZmNxWstzD8ANHIsl9eG9gOOB-0/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
+                                View Persona Study 💳
+                            </a>
+                        </div>
                     </div>
-                    <div style="margin-top: 25px;">
-                        <a href="https://docs.google.com/presentation/d/1JC52_9DIdAQorhxcVDy1no7ul3NGl--YSuN-NMEBiL4/edit?usp=sharing" target="_blank" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
-                            Open Google Slides 📊
-                        </a>
-                    </div>
-                </div>
 
-                <div style="flex: 1 1 300px; max-width: 340px; padding: 35px 30px; border-right: 1px solid rgba(0, 0, 0, 0.08); border-bottom: 1px solid rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box;">
-                    <div style="display: flex; flex-direction: column; gap: 14px;">
-                        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.3;">Sociolla Brand Performance Analysis</h3>
-                        <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.5;">
-                            Evaluated beauty cosmetics engagement across platforms. Executed Python <b>Correlation, Linear Regression, and Composite Score Rankings</b> to identify reviews and wishlists as primary conversion metrics, visualized natively in Tableau.
-                        </p>
-                        <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #718096; margin: 0;">🛠️ Python, Tableau, Spreadsheets</p>
-                    </div>
-                    <div style="margin-top: 25px;">
-                        <a href="javascript:void(0)" onclick="openPreview('Sociolla Brand Engagement Audit', 'https://drive.google.com/file/d/1mDNm1vM2QgrD250bbYhmku300aQxXH1P/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
-                            View Analytical Case 📈
-                        </a>
-                    </div>
-                </div>
-
-                <div style="flex: 1 1 300px; max-width: 340px; padding: 35px 30px; border-right: 1px solid rgba(0, 0, 0, 0.04); border-bottom: 1px solid rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box;">
-                    <div style="display: flex; flex-direction: column; gap: 14px;">
-                        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.3;">TokoBli Twin-Date Campaign Audit</h3>
-                        <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.5;">
-                            Evaluated cost efficiency ratios across massive double-date mega sales (10/10, 11/11, 12/12). Leveraged data pivot engines to balance revenue spikes against acquisition costs, isolating the 12/12 strategy as a scaling blueprint.
-                        </p>
-                        <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #718096; margin: 0;">🛠️ Advanced Excel / Spreadsheets</p>
-                    </div>
-                    <div style="margin-top: 25px;">
-                        <a href="javascript:void(0)" onclick="openPreview('TokoBli Campaign Performance Analysis', 'https://drive.google.com/file/d/17A1hlAvaxFfNTEJus_dZXCX6Xe-xr8wq/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
-                            View Campaign Guide 📊
-                        </a>
-                    </div>
-                </div>
-
-                <div style="flex: 1 1 300px; max-width: 512px; padding: 35px 30px; border-right: 1px solid rgba(0, 0, 0, 0.08); border-left: 1px solid rgba(0, 0, 0, 0.04); border-bottom: 1px solid rgba(0, 0, 0, 0.04); display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box;">
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.3;">Wishful Bazaar: Sales Trends & Dashboards</h3>
-                        <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.5;">
-                            Deployed Tableau for end-to-end data cleansing, structural normalization, and business dashboard architecture. Analyzed order flows and checkout preferences to isolate high-income brackets, providing data transparency for market optimization.
-                        </p>
-                        <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #718096; margin: 0;">🛠️ Tableau Business Suite</p>
-                    </div>
-                    <div style="margin-top: 25px;">
-                        <a href="javascript:void(0)" onclick="openPreview('Wishful Bazaar Operational Insights', 'https://drive.google.com/file/d/1VurWmpofaLcHc4De4Yl2-b9l5NlsUM_q/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
-                            View Tableau Study 🖥️
-                        </a>
-                    </div>
-                </div>
-
-                <div style="flex: 1 1 300px; max-width: 512px; padding: 35px 30px; border-right: 1px solid rgba(0, 0, 0, 0.04); border-bottom: 1px solid rgba(0, 0, 0, 0.04); display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box;">
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0; line-height: 1.3;">RevoBank Sales Insights & Behavioral Clustering</h3>
-                        <p style="font-family: 'Poppins', sans-serif; color: #5a6578; font-size: 13px; margin: 0; line-height: 1.5;">
-                            Applied Python <b>RFM modeling and K-means Clustering</b> variables to segment commercial banking record lines into four bespoke customer personas. Identified growth loops for tailored loyalty initiatives to increase total credit card acquisition volumes.
-                        </p>
-                        <p style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #718096; margin: 0;">🛠️ Python Analysis Engine</p>
-                    </div>
-                    <div style="margin-top: 25px;">
-                        <a href="javascript:void(0)" onclick="openPreview('RevoBank Customer Segments Guide', 'https://drive.google.com/file/d/1LV83JZmNxWstzD8ANHIsl9eG9gOOB-0/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.5px solid #ADD8E6; padding: 8px 15px; border-radius: 50px; background: transparent;">
-                            View Persona Study 💳
-                        </a>
-                    </div>
                 </div>
 
             </div>
