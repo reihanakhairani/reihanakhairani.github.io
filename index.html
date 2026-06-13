@@ -246,20 +246,26 @@ https://templatemo.com/tm-599-noir-fashion
 
     <script>
         function openPreview(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // kunci scroll utama
-        }
-        function closePreview(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto'; // kembalikan scroll
-        }
-        
-        // Menutup modal jika user nge-klik area gelap di luar kotak putih
-        window.onclick = function(event) {
-            if (event.target.id.startsWith('modal-')) {
-                closePreview(event.target.id);
+            var targetModal = document.getElementById(modalId);
+            if (targetModal) {
+                targetModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
             }
         }
+        function closePreview(modalId) {
+            var targetModal = document.getElementById(modalId);
+            if (targetModal) {
+                targetModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Klik di mana saja di area luar kotak putih untuk nutup modal
+        window.addEventListener('click', function(event) {
+            if (event.target.id && event.target.id.startsWith('modal-')) {
+                closePreview(event.target.id);
+            }
+        });
     </script>
 
 
