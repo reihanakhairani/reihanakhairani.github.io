@@ -108,6 +108,201 @@ https://templatemo.com/tm-599-noir-fashion
         </div>
     </section>
 
+    <style>
+        /* Animasi jalannya logo dari kanan ke kiri tanpa putus */
+        @keyframes logoScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-wrapper {
+            display: flex;
+            width: max-content;
+            animation: logoScroll 30s linear infinite; /* Kecepatan sedikit disesuaikan karena logo bertambah banyak */
+        }
+        /* Efek interaktif saat kursor rekruter menyentuh area logo */
+        .ticker-container:hover .ticker-wrapper {
+            animation-play-state: paused; /* Logo berhenti jalan pelan saat di-hover */
+        }
+        .logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 115px;
+            margin: 0 22px;
+            transition: transform 0.3s ease;
+        }
+        .logo-item:hover {
+            transform: scale(1.12); /* Logo agak membesar sedikit pas disentuh mouse */
+        }
+        .logo-item img {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-item span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4a5568;
+            white-space: nowrap;
+        }
+    </style>
+
+    <div class="ticker-container" style="width: 100%; padding: 25px 0; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-top: 1px solid rgba(255,255,255,0.5); border-bottom: 1px solid rgba(255,255,255,0.5); position: relative; overflow: hidden; z-index: 5; margin-top: -20px; margin-bottom: -20px;">
+        
+        <div style="text-align: center; margin-bottom: 15px;">
+            <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #1a1a1a; background: rgba(255, 255, 255, 0.8); padding: 5px 15px; border-radius: 50px; border: 1.5px solid #ADD8E6; letter-spacing: 0.5px; box-shadow: 0 2px 10px rgba(0,0,0,0.02);">
+                🛠========= Professional Tools & Platforms =========🛠
+            </span>
+        </div>
+
+        <div style="overflow: hidden; width: 100%; display: flex;">
+            <div class="ticker-wrapper">
+                
+                <div class="logo-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="SQL">
+                    <span>SQL Engine</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/tableau-software.png" alt="Tableau">
+                    <span>Tableau</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI">
+                    <span>Power BI</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel">
+                    <span>Advanced Excel</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="GA4">
+                    <span>Analytics (GA4)</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/meta-platforms.png" alt="Meta Ads">
+                    <span>Meta Ads</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google Ads">
+                    <span>Google Ads</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok Ads">
+                    <span>TikTok Ads</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram">
+                    <span>Instagram Ops</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/shopee.png" alt="Shopee Ads">
+                    <span>Shopee Ads</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-ahrefs-a-data-and-link-optimization-tool-for-seo-marketing-logo-color-tal-revivo.png" alt="Ahrefs">
+                    <span>Ahrefs SEO</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/semrush.png" alt="Semrush">
+                    <span>Semrush</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/mailchimp.png" alt="Mailchimp">
+                    <span>Mailchimp</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/bell.png" alt="WebPushr">
+                    <span>WebPushr CRM</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/canva.png" alt="Canva">
+                    <span>Canva Pro</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/capcut.png" alt="CapCut">
+                    <span>CapCut Pro</span>
+                </div>
+
+                <div class="logo-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="SQL">
+                    <span>SQL Engine</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/tableau-software.png" alt="Tableau">
+                    <span>Tableau</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI">
+                    <span>Power BI</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel">
+                    <span>Advanced Excel</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="GA4">
+                    <span>Analytics (GA4)</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/meta-platforms.png" alt="Meta Ads">
+                    <span>Meta Ads</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google Ads">
+                    <span>Google Ads</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok Ads">
+                    <span>TikTok Ads</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram">
+                    <span>Instagram Ops</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/shopee.png" alt="Shopee Ads">
+                    <span>Shopee Ads</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-ahrefs-a-data-and-link-optimization-tool-for-seo-marketing-logo-color-tal-revivo.png" alt="Ahrefs">
+                    <span>Ahrefs SEO</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/semrush.png" alt="Semrush">
+                    <span>Semrush</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/mailchimp.png" alt="Mailchimp">
+                    <span>Mailchimp</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/bell.png" alt="WebPushr">
+                    <span>WebPushr CRM</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/canva.png" alt="Canva">
+                    <span>Canva Pro</span>
+                </div>
+                <div class="logo-item">
+                    <img src="https://img.icons8.com/color/48/capcut.png" alt="CapCut">
+                    <span>CapCut Pro</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
    <section id="education" style="padding: 100px 0; background-color: #ffffff; position: relative; overflow: hidden;">
         
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://uc.infomania.id/uc?export=download&id=1j4L1CgN1vO4D_kP0L0V_R0m5N4d9K1Y_'); background-size: cover; background-position: center; opacity: 0.15; z-index: 0;"></div>
