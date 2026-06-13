@@ -737,28 +737,97 @@ https://templatemo.com/tm-599-noir-fashion
         }
     </style>
 
-    <section id="projects" style="padding: 80px 0; background-color: #fafbfc;">
+   <style>
+        /* 💡 DEWA LOGIC: Default awal munculkan semua projek sekaligus! */
+        .simple-project-area { display: block; }
         
-        <input type="radio" id="simple-toggle-marketing" name="simple-tabs" checked style="display: none;">
+        /* Logika penyaringan pas tombol radio-nya aktif diklik */
+        #simple-toggle-marketing:checked ~ #simple-area-analytics { display: none !important; } /* Sembunyikan DA */
+        #simple-toggle-analytics:checked ~ #simple-area-marketing { display: none !important; } /* Sembunyikan DM */
+
+        /* Desain visual tombol pas aktif terpilih */
+        #simple-toggle-marketing:checked ~ .simple-tab-group label[for="simple-toggle-marketing"],
+        #simple-toggle-analytics:checked ~ .simple-tab-group label[for="simple-toggle-analytics"] {
+            background: #1a1a1a !important;
+            color: #ffffff !important;
+            border-color: #1a1a1a !important;
+        }
+
+        /* Kotak kartu list project */
+        .simple-project-list-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+        .simple-project-list-item h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #1a1a1a;
+            margin: 0 0 10px 0;
+        }
+        .simple-project-list-item p {
+            font-family: 'Poppins', sans-serif;
+            color: #4a5568;
+            font-size: 13.5px;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+        }
+        .simple-project-list-item span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: #718096;
+        }
+        
+        /* Tombol Preview */
+        .simple-btn-preview {
+            display: inline-block;
+            font-family: 'Poppins', sans-serif !important;
+            font-weight: 600;
+            font-size: 12px;
+            color: #1a1a1a;
+            text-decoration: none;
+            border: 1.5px solid #ADD8E6;
+            padding: 8px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 10px;
+            background: transparent;
+            position: relative;
+            z-index: 10 !important;
+            pointer-events: auto !important;
+        }
+    </style>
+
+    <section id="projects" style="padding: 80px 0; background-color: #fafbfc; position: relative; z-index: 1;">
+        
+        <input type="radio" id="simple-toggle-marketing" name="simple-tabs" style="display: none;">
         <input type="radio" id="simple-toggle-analytics" name="simple-tabs" style="display: none;">
 
-        <div class="container" style="max-width: 850px; margin: 0 auto; padding: 0 20px;">
+        <div class="container" style="max-width: 850px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 5;">
             
             <div style="text-align: center; margin-bottom: 40px;">
                 <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 32px; color: #1a1a1a; margin-bottom: 8px; letter-spacing: -1px;">
                     Featured Projects
                 </h2>
                 <div style="width: 45px; height: 4px; background-color: #ADD8E6; border-radius: 2px; margin: 0 auto 15px auto;"></div>
-                <p style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #718096; margin: 0;">Select a category to view projects</p>
+                <p style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #718096; margin: 0;">Select a category to filter or view all works below</p>
             </div>
 
-            <div class="simple-tab-group" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 40px;">
-                <label for="simple-toggle-marketing" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 10px 24px; border-radius: 8px; cursor: pointer;">
+            <div class="simple-tab-group" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; position: relative; z-index: 999 !important;">
+                
+                <label for="simple-toggle-marketing" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 12px 26px; border-radius: 8px; cursor: pointer !important; display: inline-block; pointer-events: auto !important; z-index: 9999 !important; user-select: none;">
                     📢 Digital Marketing
                 </label>
-                <label for="simple-toggle-analytics" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 10px 24px; border-radius: 8px; cursor: pointer;">
+                
+                <label for="simple-toggle-analytics" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 12px 26px; border-radius: 8px; cursor: pointer !important; display: inline-block; pointer-events: auto !important; z-index: 9999 !important; user-select: none;">
                     📊 Data Analytics
                 </label>
+                
             </div>
 
             <div id="simple-area-marketing" class="simple-project-area">
