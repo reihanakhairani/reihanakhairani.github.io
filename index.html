@@ -542,358 +542,192 @@ https://templatemo.com/tm-599-noir-fashion
 
 
     <style>
-        /* 💡 LOGIKA CSS MURNI UNTUK SWITCH TAB BUTTONS */
-        .tab-content-wrapper { display: none; }
-        #tab-marketing:checked ~ .projects-slider-container #content-marketing,
-        #tab-analytics:checked ~ .projects-slider-container #content-analytics { 
-            display: flex !important; 
+        .premium-horizontal-card {
+            background: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 20px !important;
+            padding: 35px !important;
+            margin-bottom: 25px !important;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01) !important;
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            gap: 20px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+            z-index: 100 !important;
+            pointer-events: auto !important; /* Memastikan kartu mendeteksi mouse */
         }
         
-        /* Setelan warna tombol pas aktif diklik */
-        #tab-marketing:checked ~ .tab-button-group label[for="tab-marketing"],
-        #tab-analytics:checked ~ .tab-button-group label[for="tab-analytics"] {
-            background: #0f172a !important;
-            color: #ffffff !important;
-            border-color: #0f172a !important;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
-        }
-
-        /* 📐 REL SLIDER GESER HORIZONTAL (SWIPE CAROUSEL) */
-        .slider-track {
-            display: flex;
-            flex-direction: row;
-            gap: 24px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding: 20px 5px 30px 5px;
-            width: 100%;
-            scrollbar-width: thin; /* Untuk Firefox */
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch; /* Biar scroll di iPhone super smooth */
-        }
-        /* Desain Scrollbar Tipis ala Apple Biar Cantik */
-        .slider-track::-webkit-scrollbar { height: 6px; }
-        .slider-track::-webkit-scrollbar-track { background: rgba(0,0,0,0.03); border-radius: 10px; }
-        .slider-track::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
-        .slider-track::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
-
-        /* KARTU PROJECT INDIVIDUAL */
-        .project-apple-card {
-            flex: 0 0 320px; /* Kunci lebar kartu pas digeser biar gak menyusut */
-            scroll-snap-align: start;
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.02);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-        .project-apple-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-            border-color: #ADD8E6;
-        }
-    </style>
-
- <style>
-        /* 💡 LOGIKA EXCLUSIVE TOGGLE: Munculkan satu, hilangkan yang lain */
-        .project-content-area { display: none; }
-        
-        #toggle-digimar:checked ~ .projects-viewport #area-digimar { display: flex !important; }
-        #toggle-da:checked ~ .projects-viewport #area-da { display: flex !important; }
-
-        /* Style Tombol Tab Aktif */
-        #toggle-digimar:checked ~ .tab-group label[for="toggle-digimar"],
-        #toggle-da:checked ~ .tab-group label[for="toggle-da"] {
-            background: #0f172a !important;
-            color: #ffffff !important;
-            border-color: #0f172a !important;
-            box-shadow: 0 5px 15px rgba(15, 23, 42, 0.15);
-        }
-
-        /* 📐 VIEWPORT DENGAN EFEK GRADASI DI PINGGIR (FADING EDGES) */
-        .projects-viewport {
-            position: relative;
-            width: 100%;
-        }
-        /* Masking Gradasi Kiri & Kanan ala Referensimu */
-        .projects-viewport::before, .projects-viewport::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 80px;
-            height: 100%;
-            z-index: 10;
-            pointer-events: none; /* Biar tetep bisa geser kartu biarpun kena gradasi */
-        }
-        .projects-viewport::before {
-            left: 0;
-            background: linear-gradient(to right, #fafbfc, rgba(250, 251, 252, 0));
-        }
-        .projects-viewport::after {
-            right: 0;
-            background: linear-gradient(to left, #fafbfc, rgba(250, 251, 252, 0));
-        }
-
-        /* TRACK GESER HORIZONTAL */
-        .slider-track {
-            display: flex;
-            gap: 25px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding: 30px 60px; /* Padding samping agar kartu tidak nempel bgt ke gradasi awal */
-            scrollbar-width: none; /* Sembunyikan scrollbar di Firefox */
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
-        .slider-track::-webkit-scrollbar { display: none; } /* Sembunyikan scrollbar di Chrome/Safari */
-
-        /* DESAIN KARTU PROJECT */
-        .apple-project-card {
-            flex: 0 0 315px;
-            scroll-snap-align: center;
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: 28px;
-            padding: 32px;
-            backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .apple-project-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            background: #ffffff;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            border-color: #ADD8E6;
-        }
-    </style>
-
-    <style>
-        /* Logika dasar: sembunyikan semua project dulu */
-        .simple-project-area { display: none; }
-        
-        /* Kalau tombol diklik, munculkan kategori yang sesuai */
-        #simple-toggle-marketing:checked ~ #simple-area-marketing { display: block !important; }
-        #simple-toggle-analytics:checked ~ #simple-area-analytics { display: block !important; }
-
-        /* Desain tombol pas aktif */
-        #simple-toggle-marketing:checked ~ .simple-tab-group label[for="simple-toggle-marketing"],
-        #simple-toggle-analytics:checked ~ .simple-tab-group label[for="simple-toggle-analytics"] {
-            background: #1a1a1a !important;
-            color: #ffffff !important;
-            border-color: #1a1a1a !important;
-        }
-
-        /* Desain kotak list project biasa */
-        .simple-project-list-item {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-        }
-        .simple-project-list-item h3 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            color: #1a1a1a;
-            margin: 0 0 10px 0;
-        }
-        .simple-project-list-item p {
-            font-family: 'Poppins', sans-serif;
-            color: #4a5568;
-            font-size: 13.5px;
-            line-height: 1.6;
-            margin: 0 0 15px 0;
-        }
-        .simple-project-list-item span {
-            font-family: 'Poppins', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            color: #718096;
+        .card-project-info {
+            flex: 2 1 500px !important;
         }
         
-        /* Tombol preview biasa */
-        .simple-btn-preview {
-            display: inline-block;
-            font-family: 'Poppins', sans-serif !important;
-            font-weight: 600;
-            font-size: 12px;
-            color: #1a1a1a;
-            text-decoration: none;
-            border: 1.5px solid #ADD8E6;
-            padding: 8px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-right: 10px;
-            background: transparent;
-        }
-    </style>
-
-   <style>
-        /* 💡 DEWA LOGIC: Default awal munculkan semua projek sekaligus! */
-        .simple-project-area { display: block; }
-        
-        /* Logika penyaringan pas tombol radio-nya aktif diklik */
-        #simple-toggle-marketing:checked ~ #simple-area-analytics { display: none !important; } /* Sembunyikan DA */
-        #simple-toggle-analytics:checked ~ #simple-area-marketing { display: none !important; } /* Sembunyikan DM */
-
-        /* Desain visual tombol pas aktif terpilih */
-        #simple-toggle-marketing:checked ~ .simple-tab-group label[for="simple-toggle-marketing"],
-        #simple-toggle-analytics:checked ~ .simple-tab-group label[for="simple-toggle-analytics"] {
-            background: #1a1a1a !important;
-            color: #ffffff !important;
-            border-color: #1a1a1a !important;
-        }
-
-        /* Kotak kartu list project */
-        .simple-project-list-item {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-        }
-        .simple-project-list-item h3 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            color: #1a1a1a;
-            margin: 0 0 10px 0;
-        }
-        .simple-project-list-item p {
-            font-family: 'Poppins', sans-serif;
-            color: #4a5568;
-            font-size: 13.5px;
-            line-height: 1.6;
-            margin: 0 0 15px 0;
-        }
-        .simple-project-list-item span {
-            font-family: 'Poppins', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            color: #718096;
-        }
-        
-        /* Tombol Preview */
-        .simple-btn-preview {
-            display: inline-block;
-            font-family: 'Poppins', sans-serif !important;
-            font-weight: 600;
-            font-size: 12px;
-            color: #1a1a1a;
-            text-decoration: none;
-            border: 1.5px solid #ADD8E6;
-            padding: 8px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-right: 10px;
-            background: transparent;
-            position: relative;
-            z-index: 10 !important;
+        .card-project-actions {
+            flex: 1 1 200px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+            justify-content: center !important;
+            min-width: 180px !important;
+            position: relative !important;
+            z-index: 99999 !important; /* Kasta tinggi di dalam kartu */
             pointer-events: auto !important;
         }
+
+        /* 🔥 SUNTIK MATI: Tombol Preview Diberi Kasta Tertinggi Jagat Raya agar Tidak Bisa Diblokir Apapun */
+        .simple-row-btn {
+            display: block !important;
+            text-align: center !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 12px !important;
+            color: #1a1a1a !important;
+            text-decoration: none !important;
+            border: 1.5px solid #ADD8E6 !important;
+            padding: 10px 18px !important;
+            border-radius: 50px !important;
+            cursor: pointer !important;
+            background: #ffffff !important; /* Kasih background solid biar mantap */
+            transition: all 0.2s ease !important;
+            
+            /* Dua baris ini adalah jimat anti-mogok */
+            position: relative !important;
+            z-index: 9999999 !important; /* Melayang di atas elemen gaib manapun */
+            pointer-events: auto !important; /* Paksa tombol mendeteksi klik */
+        }
+        .simple-row-btn:hover {
+            background: #f7fafc !important;
+            border-color: #1a1a1a !important;
+        }
     </style>
 
-    <section id="projects" style="padding: 80px 0; background-color: #fafbfc; position: relative; z-index: 1;">
-        
-        <input type="radio" id="simple-toggle-marketing" name="simple-tabs" style="display: none;">
-        <input type="radio" id="simple-toggle-analytics" name="simple-tabs" style="display: none;">
-
-        <div class="container" style="max-width: 850px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 5;">
+    <section id="projects" style="padding: 90px 0; background-color: #fafbfc; position: relative; z-index: 50 !important; pointer-events: auto !important;">
+        <div class="container" style="max-width: 950px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 60 !important;">
             
-            <div style="text-align: center; margin-bottom: 40px;">
+            <div style="margin-bottom: 50px; text-align: left;">
                 <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 32px; color: #1a1a1a; margin-bottom: 8px; letter-spacing: -1px;">
-                    Featured Projects
+                    Featured Portfolio Projects
                 </h2>
-                <div style="width: 45px; height: 4px; background-color: #ADD8E6; border-radius: 2px; margin: 0 auto 15px auto;"></div>
-                <p style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #718096; margin: 0;">Select a category to filter or view all works below</p>
+                <div style="width: 45px; height: 4px; background-color: #ADD8E6; border-radius: 2px;"></div>
             </div>
 
-            <div class="simple-tab-group" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; position: relative; z-index: 999 !important;">
-                
-                <label for="simple-toggle-marketing" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 12px 26px; border-radius: 8px; cursor: pointer !important; display: inline-block; pointer-events: auto !important; z-index: 9999 !important; user-select: none;">
-                    📢 Digital Marketing
-                </label>
-                
-                <label for="simple-toggle-analytics" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 12px 26px; border-radius: 8px; cursor: pointer !important; display: inline-block; pointer-events: auto !important; z-index: 9999 !important; user-select: none;">
-                    📊 Data Analytics
-                </label>
-                
+            <div style="margin-bottom: 25px; margin-top: 10px;">
+                <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16px; color: #718096; letter-spacing: 0.5px;">📢 DIGITAL MARKETING PROJECTS</h3>
             </div>
 
-            <div id="simple-area-marketing" class="simple-project-area">
-                
-                <div class="simple-project-list-item">
-                    <h3>Social Media Planning & Report</h3>
-                    <p>Formulated data-driven content architectures and multi-platform briefs based on audience profiling. Evaluated resonance by monitoring KPI and ER.</p>
-                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Instagram, TikTok, Canva</span></div>
-                    <a href="javascript:void(0)" onclick="openPreview('Social Media Planning', 'https://drive.google.com/file/d/1iZjkMnkNwcFmLNYxuZDjzklqA7mxWKvU/preview')" class="simple-btn-preview">Planning Deck 📜</a>
-                    <a href="javascript:void(0)" onclick="openPreview('Social Media Reporting', 'https://drive.google.com/file/d/1dfgpyW98k3PJK63vDyHJi2x6aCyLmv5R/preview')" class="simple-btn-preview">Report Deck 📊</a>
+            <div class="premium-horizontal-card">
+                <div class="card-project-info">
+                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Social Media Planning & Report</h4>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
+                        Formulated data-driven content architectures and multi-platform briefs based on audience profiling and competitor benchmarking. Evaluated content resonance by monitoring KPIs and Engagement Rates (ER) to isolate high-performing creative formulas.
+                    </p>
+                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Instagram, TikTok, Canva</span>
                 </div>
-
-                <div class="simple-project-list-item">
-                    <h3>Paid Ads & Store Optimization</h3>
-                    <p>Managed ad lifecycles on Meta, Google, and Shopee. Combined funnel mapping with periodic budget reallocation to maximize ROI.</p>
-                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Meta Ads, Google Ads, Shopee Ads, Canva</span></div>
-                    <a href="javascript:void(0)" onclick="openPreview('Paid Ads Planning', 'https://drive.google.com/file/d/1rcgyMY9hiWSgs4mSbV7tHWQ1zvrN4iwl/preview')" class="simple-btn-preview">Ads Planning 🎯</a>
-                    <a href="javascript:void(0)" onclick="openPreview('Ads Optimization', 'https://drive.google.com/file/d/1PGpw9P29McPupG-tpM1PwZ30642ahY-h/preview')" class="simple-btn-preview">Optimization 📈</a>
+                <div class="card-project-actions">
+                    <a href="javascript:void(0)" onclick="openPreview('Social Media Planning', 'https://drive.google.com/file/d/1iZjkMnkNwcFmLNYxuZDjzklqA7mxWKvU/preview')" class="simple-row-btn">Planning Deck 📜</a>
+                    <a href="javascript:void(0)" onclick="openPreview('Social Media Reporting', 'https://drive.google.com/file/d/1dfgpyW98k3PJK63vDyHJi2x6aCyLmv5R/preview')" class="simple-row-btn">Report Deck 📊</a>
                 </div>
-
-                <div class="simple-project-list-item">
-                    <h3>Retention & CRM Marketing</h3>
-                    <p>Engineered multi-channel retention journey from Awareness to Advocacy. Integrated Push Notifications & Email architectures.</p>
-                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Mailchimp, WebPushr CRM</span></div>
-                    <a href="javascript:void(0)" onclick="openPreview('CRM Retention Journey', 'https://drive.google.com/file/d/1sQgWHxduRoxPTAVSub8zJX-FD-t5qnqQ/preview')" class="simple-btn-preview">View Strategy 📱</a>
-                </div>
-
             </div>
 
-            <div id="simple-area-analytics" class="simple-project-area">
-                
-                <div class="simple-project-list-item">
-                    <h3>Customer Segmentation PaDi UMKM</h3>
-                    <p>Identified 26% AOV decline and mapped supplier gaps. Used K-Means Clustering to segment sellers & buyers into performance personas.</p>
-                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: SQL, Python, Tableau</span></div>
-                    <a href="javascript:void(0)" onclick="openPreview('PaDi UMKM Customer Segmentation', 'https://docs.google.com/presentation/d/1JC52_9DIdAQorhxcVDy1no7ul3NGl--YSuN-NMEBiL4/preview')" class="simple-btn-preview">Open Case Study 📊</a>
+            <div class="premium-horizontal-card">
+                <div class="card-project-info">
+                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Paid Ads & Store Optimization</h4>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
+                        Managed multi-channel ad lifecycles across Meta, Google, and Shopee. Combined funnel mapping with periodic budget reallocation to maximize campaign ROI, paired with product SEO catalog architectures to secure conversion rates.
+                    </p>
+                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Meta Ads, Google Ads, Shopee Ads, Canva</span>
                 </div>
-
-                <div class="simple-project-list-item">
-                    <h3>Sociolla Brand Analysis</h3>
-                    <p>Conducted Correlation & Regression analysis to identify success metrics. Clustered brands into 4 distinct groups for marketing optimization.</p>
-                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Python, Tableau, Spreadsheets</span></div>
-                    <a href="javascript:void(0)" onclick="openPreview('Sociolla Brand Engagement Audit', 'https://drive.google.com/file/d/1mDNm1vM2QgrD250bbYhmku300aQxXH1P/preview')" class="simple-btn-preview">View Analysis 📈</a>
+                <div class="card-project-actions">
+                    <a href="javascript:void(0)" onclick="openPreview('Paid Ads Planning', 'https://drive.google.com/file/d/1rcgyMY9hiWSgs4mSbV7tHWQ1zvrN4iwl/preview')" class="simple-row-btn">Ads Planning 🎯</a>
+                    <a href="javascript:void(0)" onclick="openPreview('Ads Optimization', 'https://drive.google.com/file/d/1PGpw9P29McPupG-tpM1PwZ30642ahY-h/preview')" class="simple-row-btn">Optimization 📈</a>
                 </div>
+            </div>
 
-                <div class="simple-project-list-item">
-                    <h3>TokoBli Twin-Date Audit</h3>
-                    <p>Analyzed cost efficiency across 10/10, 11/11, and 12/12 mega campaigns. Evaluated revenue balance against flash sale costs.</p>
-                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Spreadsheet, Pivot Engine</span></div>
-                    <a href="javascript:void(0)" onclick="openPreview('TokoBli Campaign Insights', 'https://drive.google.com/file/d/17A1hlAvaxFfNTEJus_dZXCX6Xe-xr8wq/preview')" class="simple-btn-preview">View Guideline 📑</a>
+            <div class="premium-horizontal-card">
+                <div class="card-project-info">
+                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Retention & CRM Marketing</h4>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
+                        Engineered multi-channel retention lifecycles mapping user journeys from Awareness down to Advocacy. Integrated automated web push notifications and segmented email architectures to cultivate user conversion behavior.
+                    </p>
+                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Mailchimp, WebPushr CRM</span>
                 </div>
-
-                <div class="simple-project-list-item">
-                    <h3>Wishful Bazaar Analytics</h3>
-                    <p>Used Tableau for end-to-end cleansing and dashboard creation. Optimized strategic decisions to target high-income segments.</p>
-                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Tableau Business Suite</span></div>
-                    <a href="javascript:void(0)" onclick="openPreview('Wishful Bazaar Operational Insights', 'https://drive.google.com/file/d/1VurWmpofaLcHc4De4Yl2-b9l5NlsUM_q/preview')" class="simple-btn-preview">View Dashboard 🖥️</a>
+                <div class="card-project-actions">
+                    <a href="javascript:void(0)" onclick="openPreview('CRM Retention Journey', 'https://drive.google.com/file/d/1sQgWHxduRoxPTAVSub8zJX-FD-t5qnqQ/preview')" class="simple-row-btn">View Strategy 📱</a>
                 </div>
+            </div>
 
-                <div class="simple-project-list-item">
-                    <h3>RevoBank Sales Segment</h3>
-                    <p>Applied RFM and K-means Clustering to segment 4 bank customer personas. Revealed loyalty loops for credit card acquisition growth.</p>
-                    <div style="margin-bottom: 15px;"><span>🛠️ Tools: Python Analysis Engine</span></div>
-                    <a href="javascript:void(0)" onclick="openPreview('RevoBank Customer Persona Guide', 'https://drive.google.com/file/d/1LV83JZmNxWstzD8ANHIsl9eG9gOOB-0/preview')" class="simple-btn-preview">View Persona Study 💳</a>
+
+            <div style="margin-bottom: 25px; margin-top: 50px;">
+                <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16px; color: #718096; letter-spacing: 0.5px;">📊 DATA ANALYTICS PROJECTS</h3>
+            </div>
+
+            <div class="premium-horizontal-card">
+                <div class="card-project-info">
+                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Customer Segmentation of PaDi UMKM</h4>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
+                        Analyzed a 26% AOV decline and mapped supplier mismatches across marketplace categories. Deployed Python K-Means Clustering to segment accounts into core performance personas, establishing levers monitored via Tableau dashboards.
+                    </p>
+                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: SQL, Python, Tableau</span>
                 </div>
+                <div class="card-project-actions">
+                    <a href="javascript:void(0)" onclick="openPreview('PaDi UMKM Customer Segmentation', 'https://docs.google.com/presentation/d/1JC52_9DIdAQorhxcVDy1no7ul3NGl--YSuN-NMEBiL4/preview')" class="simple-row-btn">Open Case Study 📊</a>
+                </div>
+            </div>
 
+            <div class="premium-horizontal-card">
+                <div class="card-project-info">
+                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Sociolla Brand Performance Analysis</h4>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
+                        Evaluated beauty cosmetics engagement across platforms. Executed Python Correlation, Linear Regression, and Composite Score Rankings to identify reviews and wishlists as primary conversion metrics, visualized natively in Tableau.
+                    </p>
+                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Python, Tableau, Spreadsheets</span>
+                </div>
+                <div class="card-project-actions">
+                    <a href="javascript:void(0)" onclick="openPreview('Sociolla Brand Engagement Audit', 'https://drive.google.com/file/d/1mDNm1vM2QgrD250bbYhmku300aQxXH1P/preview')" class="simple-row-btn">View Analysis 📈</a>
+                </div>
+            </div>
+
+            <div class="premium-horizontal-card">
+                <div class="card-project-info">
+                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">TokoBli Twin-Date Campaign Audit</h4>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
+                        Evaluated cost efficiency ratios across massive double-date mega sales (10/10, 11/11, 12/12). Leveraged data pivot engines to balance revenue spikes against acquisition costs, isolating the 12/12 strategy as a scaling blueprint.
+                    </p>
+                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Spreadsheet, Pivot Engine</span>
+                </div>
+                <div class="card-project-actions">
+                    <a href="javascript:void(0)" onclick="openPreview('TokoBli Campaign Performance Analysis', 'https://drive.google.com/file/d/17A1hlAvaxFfNTEJus_dZXCX6Xe-xr8wq/preview')" class="simple-row-btn">View Guideline 📑</a>
+                </div>
+            </div>
+
+            <div class="premium-horizontal-card">
+                <div class="card-project-info">
+                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Wishful Bazaar Analytics</h4>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
+                        Deployed Tableau for end-to-end data cleansing, structural normalization, and business dashboard architecture. Analyzed order flows and checkout preferences to isolate high-income brackets, providing data transparency.
+                    </p>
+                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Tableau Business Suite</span>
+                </div>
+                <div class="card-project-actions">
+                    <a href="javascript:void(0)" onclick="openPreview('Wishful Bazaar Operational Insights', 'https://drive.google.com/file/d/1VurWmpofaLcHc4De4Yl2-b9l5NlsUM_q/preview')" class="simple-row-btn">View Dashboard 🖥️</a>
+                </div>
+            </div>
+
+            <div class="premium-horizontal-card">
+                <div class="card-project-info">
+                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">RevoBank Sales Insights & Clustering</h4>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
+                        Applied Python RFM modeling and K-means Clustering variables to segment commercial banking record lines into four bespoke customer personas. Identified growth loops for tailored loyalty initiatives to increase total card acquisition.
+                    </p>
+                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Python Analysis Engine</span>
+                </div>
+                <div class="card-project-actions">
+                    <a href="javascript:void(0)" onclick="openPreview('RevoBank Customer Segments Guide', 'https://drive.google.com/file/d/1LV83JZmNxWstzD8ANHIsl9eG9gOOB-0/preview')" class="simple-row-btn">View Persona Study 💳</a>
+                </div>
             </div>
 
         </div>
