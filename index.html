@@ -249,9 +249,10 @@ https://templatemo.com/tm-599-noir-fashion
             var targetModal = document.getElementById(modalId);
             if (targetModal) {
                 targetModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden'; /* Titik sudah aman terpasang */
             }
         }
+
         function closePreview(modalId) {
             var targetModal = document.getElementById(modalId);
             if (targetModal) {
@@ -260,7 +261,7 @@ https://templatemo.com/tm-599-noir-fashion
             }
         }
         
-        // Klik di mana saja di area luar kotak putih untuk nutup modal
+        /* Klik di area luar kotak putih untuk menutup modal otomatis */
         window.addEventListener('click', function(event) {
             if (event.target.id && event.target.id.startsWith('modal-')) {
                 closePreview(event.target.id);
