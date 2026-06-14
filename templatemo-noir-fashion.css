@@ -2067,3 +2067,48 @@ body::after { background: #90ee90; bottom: 15%; left: -10%; }
 }
 .card-project-info { flex: 2 1 500px !important; text-align: left !important; }
 .card-project-actions { flex: 1 1 200px !important; display: flex !important; flex-direction: column !important; gap: 10px !important; justify-content: center !important; min-width: 180px !important; }
+
+
+/* ==========================================================================
+   EFEK PASTEL LIQUID GLOW - VIEW CV & PORTFOLIO REIHANA
+   ========================================================================== */
+
+/* 1. Atur gaya dasar tombol di Hero agar seragam pastel glass */
+.cta-group .cta-button.primary {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    color: #1a1a1a !important;
+    border: 1.5px solid #ADD8E6 !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    box-shadow: 0 4px 15px rgba(173, 216, 230, 0.1) !important;
+    transition: all 0.4s ease-in-out !important;
+    
+    /* Pasang mantra animasi pendaran kaca cair */
+    animation: liquidPastelGlow 3s infinite ease-in-out !important;
+}
+
+/* 2. Efek interaksi saat kursor rekruter menyentuh tombolnya */
+.cta-group .cta-button.primary:hover {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    border-color: #1a1a1a !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(26, 26, 26, 0.2) !important;
+    animation-play-state: paused !important; /* Hentikan kedipan pas disentuh biar tenang */
+}
+
+/* 3. Logika Matematika Animasi Denyut Aura Pastel Blue */
+@keyframes liquidPastelGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.6);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(173, 216, 230, 0);
+        transform: scale(1.02); /* Membesar super tipis dengan halus */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(173, 216, 230, 0);
+        transform: scale(1);
+    }
+}
