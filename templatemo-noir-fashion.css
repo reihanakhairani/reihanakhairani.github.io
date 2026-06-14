@@ -2116,3 +2116,15 @@ body::after { background: #90ee90; bottom: 15%; left: -10%; }
         transform: scale(1);
     }
 }
+
+/* ==========================================================================
+   MUTLAK ANTI-HITAM: PAKSA TOMBOL HERO TETAP CERAH SEGAR
+   ========================================================================== */
+.cta-group .cta-button.primary:hover, 
+.cta-button.primary:hover, 
+a.cta-button.primary:hover {
+    background: rgba(144, 238, 144, 0.7) !important; /* Paksa jadi Hijau Mint Pastel */
+    color: #1a1a1a !important; /* Paksa teksnya tetep gelap biar kebaca */
+    border-color: #90ee90 !important;
+    box-shadow: 0 10px 25px rgba(173, 216, 230, 0.4) !important;
+}
