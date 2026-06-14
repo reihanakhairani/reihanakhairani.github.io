@@ -396,6 +396,32 @@
     </style>
 
     <section id="projects" style="padding: 90px 0; background-color: #fafbfc; position: relative; z-index: 50 !important;">
+
+        <style>
+            /* Default awal: Munculkan semua kartu projek sekaligus */
+            .premium-horizontal-card { display: flex !important; }
+
+            /* MANTRA FIX: Masuk ke .container dulu baru sembunyikan kartu */
+            #filter-marketing:checked ~ .container #projects-holder .da-card { 
+                display: none !important; 
+            }
+            #filter-analytics:checked ~ .container #projects-holder .dm-card { 
+                display: none !important; 
+            }
+
+            /* Warna tombol pas aktif diklik */
+            #filter-marketing:checked ~ .container .interactive-tab-bar label[for="filter-marketing"],
+            #filter-analytics:checked ~ .container .interactive-tab-bar label[for="filter-analytics"] {
+                background: #1a1a1a !important;
+                color: #ffffff !important;
+                border-color: #1a1a1a !important;
+            }
+        </style>
+
+        <input type="radio" id="filter-marketing" name="project-filter-system" style="display: none;">
+        <input type="radio" id="filter-analytics" name="project-filter-system" style="display: none;">
+
+        <div class="container" style="max-width: 950px; margin: 0 auto; padding: 0 20px;">
         
         <input type="radio" id="filter-marketing" name="project-filter-system" style="display: none;">
         <input type="radio" id="filter-analytics" name="project-filter-system" style="display: none;">
