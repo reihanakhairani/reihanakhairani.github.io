@@ -407,7 +407,7 @@ nav.scrolled {
 	filter: blur(50px);
 }
 
-/* Animasi kombinasi: Efek kaca cair meliuk + pendaran denyut biru pastel */
+/* Animasi kombinasi: Efek kaca cair meliuk + pendaran denyut biru pastel (TETAP CERAH PAS HOVER) */
 @keyframes flameMovement {
 	0% {
 		transform: translate(0, 0) rotate(0deg) scale(1);
@@ -417,7 +417,7 @@ nav.scrolled {
 	33% {
 		transform: translate(50px, 40px) rotate(30deg) scale(1.05);
 		border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
-		box-shadow: 0 0 20px 6px rgba(173, 216, 230, 0.3);
+		box-shadow: 0 0 20px 6px rgba(173, 216, 230, 0.4);
 	}
 	66% {
 		transform: translate(-30px, 60px) rotate(-20deg) scale(0.98);
@@ -596,10 +596,15 @@ nav.scrolled {
 	display: inline-block;
 }
 
+/* TOMBOL PRIMARY (VIEW CV): Efek Kaca Cair Pastel Blue */
 .cta-button.primary {
-    background: var(--accent);
-    color: #1a1a1a !important; /* Memaksa tulisan di dalam tombol biru muda jadi gelap biar kebaca */
+    background: rgba(173, 216, 230, 0.5) !important; /* Biru muda transparan glass */
+    color: #1a1a1a !important; 
     font-weight: 600;
+    border: 1.5px solid #ADD8E6 !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    box-shadow: 0 4px 15px rgba(173, 216, 230, 0.15) !important;
 }
 
 .cta-button.primary::before {
@@ -609,7 +614,7 @@ nav.scrolled {
 	left: 50%;
 	width: 0;
 	height: 0;
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(255, 255, 255, 0.3); /* Pendaran putih halus pas diklik */
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
 	transition: width 0.6s, height 0.6s;
@@ -620,22 +625,30 @@ nav.scrolled {
 	height: 300px;
 }
 
+/* INTERAKSI HOVER PRIMARY: Tetap Cerah Segar ke Mint Green Transparan (Anti-Hitam!) */
 .cta-button.primary:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 20px 40px rgba(255, 51, 102, 0.3);
+	transform: translateY(-3px) !important;
+	background: rgba(144, 238, 144, 0.6) !important; /* Transisi ke Hijau Mint Pastel Lembut */
+	border-color: #90ee90 !important;
+	color: #1a1a1a !important; /* Tulisan di dalam tombol dijamin tetep hitam tegas kebaca */
+	box-shadow: 0 10px 25px rgba(173, 216, 230, 0.35) !important; /* Pendaran bayangan biru muda adem */
 }
 
+/* TOMBOL OUTLINE (VIEW PORTFOLIO) */
 .cta-button.outline {
-	background: transparent;
-	color: white;
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	backdrop-filter: blur(10px);
+	background: rgba(255, 255, 255, 0.2) !important;
+	color: #1a1a1a !important; /* Teks dibikin abu-abu gelap biar kontras di layar putih */
+	border: 1.5px solid rgba(173, 216, 230, 0.6) !important;
+	backdrop-filter: blur(10px) !important;
+	-webkit-backdrop-filter: blur(10px) !important;
 }
 
+/* INTERAKSI HOVER OUTLINE: Ikutan Cerah */
 .cta-button.outline:hover {
-	background: rgba(255, 255, 255, 0.05);
-	border-color: rgba(255, 255, 255, 0.5);
-	transform: translateY(-2px);
+	background: rgba(173, 216, 230, 0.4) !important;
+	border-color: #ADD8E6 !important;
+	transform: translateY(-3px) !important;
+	box-shadow: 0 10px 25px rgba(173, 216, 230, 0.2) !important;
 }
 
 .hero-right {
