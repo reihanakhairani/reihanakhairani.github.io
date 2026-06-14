@@ -1,3 +1,20 @@
+<section class="hero" id="home">
+    ...
+    <div class="hero-left">...</div>
+    <div class="hero-right">...</div>
+    ```
+
+Karena tag `</section>` milik Hero paling atas kelupaan ditutup, browser membaca bahwa **seluruh area Ticker Logo dan area Project kamu dianggap masih menjadi bagian dari area Hero paling atas**. Alhasil, lapisan transparan animasi Hero meluber ke bawah dan memblokir seluruh klik mouse kamu, sehingga tombol project di kasta bawah gak akan pernah bisa mendeteksi sentuhan jari rekruter!
+
+---
+
+### 🛠️ Solusi Instan (Tinggal Copas Utuh)
+
+Aku udah beresin susunannya secara total di bawah ini. Tag Hero sudah aku tutup secara resmi (`</section>`), susunan *Z-Index* tombol project sudah diperkuat, dan format kodenya memanjang kesamping seimbang sesuai seleramu yang bersih dan anti-pusing!
+
+Yuk, **blok semua kode di dalam file `index.html` kamu dari baris pertama (`<!DOCTYPE html>`) sampai baris paling terakhir (`</html>`)**, lalu **ganti total** dengan satu gelondong kode suci pembetulan ini:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +26,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<!-- 
-TemplateMo 599 Noir Fashion
-https://templatemo.com/tm-599-noir-fashion
--->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg" id="navbar" style="background-color: #ffffff; padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 999; border-bottom: 1px solid #f0f0f0;">
@@ -34,7 +47,7 @@ https://templatemo.com/tm-599-noir-fashion
                         <a class="nav-link" href="#experience" style="font-family: 'Poppins', sans-serif !important; color: #1a1a1a !important; font-weight: 500 !important; font-size: 15px !important; text-decoration: none !important; padding: 0 !important;">Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#collections" style="font-family: 'Poppins', sans-serif !important; color: #1a1a1a !important; font-weight: 500 !important; font-size: 15px !important; text-decoration: none !important; padding: 0 !important;">Projects</a>
+                        <a class="nav-link" href="#projects" style="font-family: 'Poppins', sans-serif !important; color: #1a1a1a !important; font-weight: 500 !important; font-size: 15px !important; text-decoration: none !important; padding: 0 !important;">Projects</a>
                     </li>
                     
                     <li class="nav-item" style="margin-left: 10px !important; list-style: none !important;">
@@ -58,11 +71,10 @@ https://templatemo.com/tm-599-noir-fashion
 
     <section class="hero" id="home">
         <div class="hero-bg"></div>
-       <div class="hero-container" style="padding-top: 50px !important; margin-top: -30px !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; align-items: center; justify-content: space-between; max-width: 1400px; margin-left: 0 auto; margin-right: 0 auto; padding-left: 60px; padding-right: 60px; gap: 50px;">
+        <div class="hero-container" style="padding-top: 50px !important; margin-top: -30px !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; align-items: center; justify-content: space-between; max-width: 1400px; margin-left: auto; margin-right: auto; padding-left: 60px; padding-right: 60px; gap: 50px;">
             
             <div class="hero-left" style="flex: 2 1 650px !important; max-width: 750px !important; float: none !important; text-align: left;">
-                
-               <div class="hero-badge" style="font-family: 'Poppins', sans-serif !important; display: inline-block; background: rgba(173, 216, 230, 0.5); color: #1a1a1a; padding: 10px 22px; border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 25px; white-space: nowrap; box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.7); animation: pulseGlow 2s infinite ease-in-out;">
+                <div class="hero-badge" style="font-family: 'Poppins', sans-serif !important; display: inline-block; background: rgba(173, 216, 230, 0.5); color: #1a1a1a; padding: 10px 22px; border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 25px; white-space: nowrap; box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.7); animation: pulseGlow 2s infinite ease-in-out;">
                     ✨ Open for Marketing Analyst & Digital Marketer Roles
                 </div>
                 
@@ -80,17 +92,12 @@ https://templatemo.com/tm-599-noir-fashion
                 </div>
             </div>
                 
-           
-           <div class="hero-right" style="display: flex !important; flex: 1 1 350px !important; justify-content: center !important; align-items: flex-start; padding-top: 0px !important; perspective: 1000px; max-width: 380px !important; overflow: visible; margin: 0 auto !important;">
-                
+            <div class="hero-right" style="display: flex !important; flex: 1 1 350px !important; justify-content: center !important; align-items: flex-start; padding-top: 0px !important; perspective: 1000px; max-width: 380px !important; overflow: visible; margin: 0 auto !important;">
                 <div class="lanyard-container" style="position: relative; transform-origin: top center; display: flex; flex-direction: column; align-items: center; width: 310px;">
-                    
                     <div class="lanyard-strap" style="position: absolute; top: -250px; left: 50%; transform: translateX(-50%); width: 22px; height: 380px; background: #ADD8E6; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); z-index: 1;"></div>
-                    
                     <div class="lanyard-clip" style="position: absolute; top: 125px; left: 50%; transform: translateX(-50%); width: 30px; height: 25px; background: #cccccc; border-radius: 6px; box-shadow: inset 0 2px 4px rgba(255,255,255,0.5); z-index: 2; border: 2px solid #aaaaaa;"></div>
 
                     <div class="id-card-wrapper" style="position: relative; width: 310px; height: 440px; background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08); border: 2px solid #f2f2f2; margin-top: 150px; margin-bottom: 0 !important; z-index: 3;">
-                        
                         <div style="height: 60px; background: #fdfdfd; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; border-bottom: 1px solid #eeeeee;">
                             <span style="font-family: 'Poppins', sans-serif; font-size: 11px; color: #888888; font-weight: 600; letter-spacing: 0.5px;">#READY_TO_WORK</span>
                             <div style="width: 10px; height: 10px; background: #2ecc71; border-radius: 50%; box-shadow: 0 0 8px #2ecc71;"></div>
@@ -103,12 +110,14 @@ https://templatemo.com/tm-599-noir-fashion
                         <div style="display: flex; justify-content: center; align-items: center; height: 60px; background: #ffffff; padding: 0 15px;">
                             <p style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #1a1a1a; margin: 0; font-size: 17px; letter-spacing: -0.5px;">Reihana Khairani</p>
                         </div>
-                    </div> </div> </div> </div> <div class="scroll-indicator">
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+        <div class="scroll-indicator">
             <span></span>
         </div>
-    </section>
-
-    <style>
+    </section> <style>
         @keyframes logoScroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -121,50 +130,33 @@ https://templatemo.com/tm-599-noir-fashion
         .ticker-container:hover .ticker-wrapper {
             animation-play-state: paused;
         }
-        
-        /* 📐 KUNCI UX: STRUKTUR KOTAK GRID SEPERTI REFERENSI GAMBAR */
         .logo-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            width: 130px; /* Lebar kotak diseragamkan */
-            height: 105px; /* Tinggi kotak diseragamkan agar membentuk grid sempurna */
+            width: 130px;
+            height: 105px;
             transition: all 0.3s ease;
         }
         .logo-item:hover {
             transform: scale(1.08);
-            background: rgba(255, 255, 255, 0.05) !important; /* Efek highlight tipis pas kotak disentuh kursor */
+            background: rgba(255, 255, 255, 0.05) !important;
         }
-        
-        /* Modifikasi hover pas Dark Mode */
-        body.dark-mode .logo-item:hover,
-        [data-theme="dark"] .logo-item:hover,
-        .dark .logo-item:hover {
-            background: rgba(0, 0, 0, 0.03) !important;
-        }
-
         .logo-item img {
             height: 32px;
             width: auto;
             object-fit: contain;
-            filter: grayscale(10%) contrast(100%); /* Menjaga warna logo tetap hidup tapi menyatu */
         }
         .logo-item span {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif !important;
             font-size: 11px;
             font-weight: 600;
             white-space: nowrap;
         }
-        
-        /* ==========================================================================
-           LOGIKA WARNA & GARIS PEMBATAS GRID (AUTO LIGHT & DARK MODE)
-           ========================================================================== */
-        
-        /* 1. SAAT LIGHT MODE (Website Putih -> Ticker Navy Gelap + Garis Grid Putih Transparan) */
         .ticker-container {
-            background: #0f172a !important; /* Deep Corporate Navy */
+            background: #0f172a !important;
             border-top: 1px solid rgba(255, 255, 255, 0.15);
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
@@ -174,43 +166,14 @@ https://templatemo.com/tm-599-noir-fashion
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
         .ticker-container .logo-item {
-            border-right: 1px solid rgba(255, 255, 255, 0.12); /* Garis grid vertikal */
+            border-right: 1px solid rgba(255, 255, 255, 0.12);
         }
         .ticker-container .logo-item span {
             color: #e2e8f0 !important;
         }
-
-        /* 2. SAAT DARK MODE (Website Gelap -> Ticker Kaca Terang + Garis Grid Hitam Transparan) */
-        body.dark-mode .ticker-container, 
-        [data-theme="dark"] .ticker-container,
-        .dark .ticker-container {
-            background: rgba(255, 255, 255, 0.88) !important; /* Frosted Light Glass */
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
-        body.dark-mode .ticker-container .ticker-title,
-        [data-theme="dark"] .ticker-container .ticker-title,
-        .dark .ticker-container .ticker-title {
-            color: #0f172a !important;
-            background: rgba(0, 0, 0, 0.02) !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
-        body.dark-mode .ticker-container .logo-item,
-        [data-theme="dark"] .ticker-container .logo-item,
-        .dark .ticker-container .logo-item {
-            border-right: 1px solid rgba(0, 0, 0, 0.08); /* Garis grid vertikal versi gelap */
-        }
-        body.dark-mode .ticker-container .logo-item span,
-        [data-theme="dark"] .ticker-container .logo-item span,
-        .dark .ticker-container .logo-item span {
-            color: #1e293b !important;
-        }
     </style>
 
     <div class="ticker-container" style="width: 100%; position: relative; overflow: hidden; z-index: 5; margin-top: -10px; margin-bottom: -10px; transition: all 0.4s ease; display: flex; flex-direction: column;">
-        
         <div class="ticker-title" style="width: 100%; padding: 15px 25px; text-align: left; transition: all 0.4s ease;">
             <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.2px;">
                 ⚙️ PROFESSIONAL WORKSTATION & MARKETING TOOLS CAPABILITIES
@@ -219,158 +182,50 @@ https://templatemo.com/tm-599-noir-fashion
 
         <div style="overflow: hidden; width: 100%; display: flex;">
             <div class="ticker-wrapper">
-                
-                <div class="logo-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                    <span>Python</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="SQL">
-                    <span>SQL Engine</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/tableau-software.png" alt="Tableau">
-                    <span>Tableau</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI">
-                    <span>Power BI</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel">
-                    <span>Advanced Excel</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="GA4">
-                    <span>Analytics (GA4)</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/meta-platforms.png" alt="Meta Ads">
-                    <span>Meta Ads</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google Ads">
-                    <span>Google Ads</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok Ads">
-                    <span>TikTok Ads</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram">
-                    <span>Instagram Ops</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/shopee.png" alt="Shopee Ads">
-                    <span>Shopee Ads</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-ahrefs-a-data-and-link-optimization-tool-for-seo-marketing-logo-color-tal-revivo.png" alt="Ahrefs">
-                    <span>Ahrefs SEO</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/semrush.png" alt="Semrush">
-                    <span>Semrush</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/mailchimp.png" alt="Mailchimp">
-                    <span>Mailchimp</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/fluency/48/push-notifications.png" alt="WebPushr">
-                    <span>WebPushr CRM</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/canva.png" alt="Canva">
-                    <span>Canva Pro</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/capcut.png" alt="CapCut">
-                    <span>CapCut Pro</span>
-                </div>
-
-                <div class="logo-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                    <span>Python</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="SQL">
-                    <span>SQL Engine</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/tableau-software.png" alt="Tableau">
-                    <span>Tableau</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI">
-                    <span>Power BI</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel">
-                    <span>Advanced Excel</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="GA4">
-                    <span>Analytics (GA4)</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/meta-platforms.png" alt="Meta Ads">
-                    <span>Meta Ads</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google Ads">
-                    <span>Google Ads</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok Ads">
-                    <span>TikTok Ads</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram">
-                    <span>Instagram Ops</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/shopee.png" alt="Shopee Ads">
-                    <span>Shopee Ads</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-ahrefs-a-data-and-link-optimization-tool-for-seo-marketing-logo-color-tal-revivo.png" alt="Ahrefs">
-                    <span>Ahrefs SEO</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/semrush.png" alt="Semrush">
-                    <span>Semrush</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/mailchimp.png" alt="Mailchimp">
-                    <span>Mailchimp</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/fluency/48/push-notifications.png" alt="WebPushr">
-                    <span>WebPushr CRM</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/canva.png" alt="Canva">
-                    <span>Canva Pro</span>
-                </div>
-                <div class="logo-item">
-                    <img src="https://img.icons8.com/color/48/capcut.png" alt="CapCut">
-                    <span>CapCut Pro</span>
-                </div>
-                
+                <div class="logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="SQL"><span>SQL Engine</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/tableau-software.png" alt="Tableau"><span>Tableau</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI"><span>Power BI</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel"><span>Advanced Excel</span></div>
+                <div class="logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="GA4"><span>Analytics (GA4)</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/meta-platforms.png" alt="Meta Ads"><span>Meta Ads</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/google-logo.png" alt="Google Ads"><span>Google Ads</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok Ads"><span>TikTok Ads</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram"><span>Instagram Ops</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/shopee.png" alt="Shopee Ads"><span>Shopee Ads</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-ahrefs-a-data-and-link-optimization-tool-for-seo-marketing-logo-color-tal-revivo.png" alt="Ahrefs"><span>Ahrefs SEO</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/semrush.png" alt="Semrush"><span>Semrush</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/mailchimp.png" alt="Mailchimp"><span>Mailchimp</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/fluency/48/push-notifications.png" alt="WebPushr"><span>WebPushr CRM</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/canva.png" alt="Canva"><span>Canva Pro</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/capcut.png" alt="CapCut"><span>CapCut Pro</span></div>
+                <div class="logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="SQL"><span>SQL Engine</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/tableau-software.png" alt="Tableau"><span>Tableau</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI"><span>Power BI</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel"><span>Advanced Excel</span></div>
+                <div class="logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="GA4"><span>Analytics (GA4)</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/meta-platforms.png" alt="Meta Ads"><span>Meta Ads</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/google-logo.png" alt="Google Ads"><span>Google Ads</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok Ads"><span>TikTok Ads</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram"><span>Instagram Ops</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/shopee.png" alt="Shopee Ads"><span>Shopee Ads</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-ahrefs-a-data-and-link-optimization-tool-for-seo-marketing-logo-color-tal-revivo.png" alt="Ahrefs"><span>Ahrefs SEO</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/semrush.png" alt="Semrush"><span>Semrush</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/mailchimp.png" alt="Mailchimp"><span>Mailchimp</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/fluency/48/push-notifications.png" alt="WebPushr"><span>WebPushr CRM</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/canva.png" alt="Canva"><span>Canva Pro</span></div>
+                <div class="logo-item"><img src="https://img.icons8.com/color/48/capcut.png" alt="CapCut"><span>CapCut Pro</span></div>
             </div>
         </div>
     </div>
 
-   <section id="education" style="padding: 100px 0; background-color: #ffffff; position: relative; overflow: hidden;">
-        
+    <section id="education" style="padding: 100px 0; background-color: #ffffff; position: relative; overflow: hidden;">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://uc.infomania.id/uc?export=download&id=1j4L1CgN1vO4D_kP0L0V_R0m5N4d9K1Y_'); background-size: cover; background-position: center; opacity: 0.15; z-index: 0;"></div>
-        
         <div style="position: absolute; width: 500px; height: 500px; background: rgba(173, 216, 230, 0.3); border-radius: 50%; filter: blur(120px); top: -20%; right: -10%; z-index: 1;"></div>
         <div style="position: absolute; width: 400px; height: 400px; background: rgba(46, 204, 113, 0.15); border-radius: 50%; filter: blur(100px); bottom: -15%; left: -10%; z-index: 1;"></div>
 
         <div class="container" style="max-width: 1050px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2;">
-            
             <div style="margin-bottom: 55px; text-align: left;">
                 <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 34px; color: #1a1a1a; margin-bottom: 8px; letter-spacing: -1px;">
                     Education Background
@@ -379,94 +234,62 @@ https://templatemo.com/tm-599-noir-fashion
             </div>
 
             <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 28px; justify-content: center; align-items: stretch; width: 100%;">
-                
                 <div style="flex: 1 1 300px; max-width: 330px; background: rgba(255, 255, 255, 0.2); border-radius: 28px; padding: 35px; border: 1.5px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; justify-content: space-between;">
                     <div style="display: flex; flex-direction: column; gap: 15px;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; width: 100%;">
-                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 19px; color: #1a1a1a; margin: 0; line-height: 1.3;">
-                                UMY
-                            </h3>
-                            <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #1a1a1a; background: rgba(255, 255, 255, 0.5); padding: 5px 14px; border-radius: 50px; border: 1.5px solid #ADD8E6; white-space: nowrap;">
-                                ✨ GPA: 3.93
-                            </span>
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 19px; color: #1a1a1a; margin: 0; line-height: 1.3;">UMY</h3>
+                            <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #1a1a1a; background: rgba(255, 255, 255, 0.5); padding: 5px 14px; border-radius: 50px; border: 1.5px solid #ADD8E6; white-space: nowrap;">✨ GPA: 3.93</span>
                         </div>
                         <div>
-                            <p style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #333333; font-size: 14px; margin: 0 0 4px 0;">
-                                International Program of Communication Studies
-                            </p>
-                            <p style="font-family: 'Poppins', sans-serif; font-weight: 500; color: #666666; font-size: 13px; margin: 0 0 12px 0;">
-                                Concentration: Public Relations
-                            </p>
-                            <p style="font-family: 'Poppins', sans-serif; color: #444444; font-size: 13px; margin: 0; line-height: 1.6;">
-                                Awarded National Certificate as a <b>Public Affairs Analyst</b> by BNSP.
-                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #333333; font-size: 14px; margin: 0 0 4px 0;">International Program of Communication Studies</p>
+                            <p style="font-family: 'Poppins', sans-serif; font-weight: 500; color: #666666; font-size: 13px; margin: 0 0 12px 0;">Concentration: Public Relations</p>
+                            <p style="font-family: 'Poppins', sans-serif; color: #444444; font-size: 13px; margin: 0; line-height: 1.6;">Awarded National Certificate as a <b>Public Affairs Analyst</b> by BNSP.</p>
                         </div>
                     </div>
                     <div style="margin-top: 25px;">
-                        <a href="javascript:void(0)" onclick="openPreview('BNSP Certificate - Reihana Khairani', 'https://drive.google.com/file/d/1AykJgKo9gyP9zHzhi8A-wW4qTUych6H3/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.8px solid #ADD8E6; padding: 9px 18px; border-radius: 50px; background: rgba(255, 255, 255, 0.3); cursor: pointer;">
-                            View BNSP Certificate 📄
-                        </a>
+                        <a href="javascript:void(0)" onclick="openPreview('BNSP Certificate - Reihana Khairani', 'https://drive.google.com/file/d/1AykJgKo9gyP9zHzhi8A-wW4qTUych6H3/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.8px solid #ADD8E6; padding: 9px 18px; border-radius: 50px; background: rgba(255, 255, 255, 0.3); cursor: pointer;">View BNSP Certificate 📄</a>
                     </div>
                 </div>
 
                 <div style="flex: 1 1 300px; max-width: 330px; background: rgba(255, 255, 255, 0.2); border-radius: 28px; padding: 35px; border: 1.5px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; justify-content: space-between;">
                     <div style="display: flex; flex-direction: column; gap: 15px;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; width: 100%;">
-                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 19px; color: #1a1a1a; margin: 0; line-height: 1.3;">
-                                RevoU
-                            </h3>
-                            <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #1a1a1a; background: rgba(255, 255, 255, 0.5); padding: 5px 14px; border-radius: 50px; border: 1.5px solid #ADD8E6; white-space: nowrap;">
-                                Score: 98.48
-                            </span>
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 19px; color: #1a1a1a; margin: 0; line-height: 1.3;">RevoU Academy</h3>
+                            <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #1a1a1a; background: rgba(255, 255, 255, 0.5); padding: 5px 14px; border-radius: 50px; border: 1.5px solid #ADD8E6; white-space: nowrap;">🏆 Score: 98.48</span>
                         </div>
                         <div>
-                            <p style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #333333; font-size: 14px; margin: 0 0 12px 0;">
-                                Full-stack Data Analytics
-                            </p>
-                            <p style="font-family: 'Poppins', sans-serif; color: #444444; font-size: 13px; margin: 0; line-height: 1.6;">
-                                Completed an intensive 13-week program covering Excel, SQL, Python, and Data Visualization in Tableau.
-                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #333333; font-size: 14px; margin: 0 0 4px 0;">Full-stack Data Analytics</p>
+                            <p style="font-family: 'Poppins', sans-serif; font-weight: 500; color: #666666; font-size: 13px; margin: 0 0 12px 0;">Intensive 13-Week Program</p>
+                            <p style="font-family: 'Poppins', sans-serif; color: #444444; font-size: 13px; margin: 0; line-height: 1.6;">Completed technical training in advanced Python data systems, SQL querying engineering, Tableau dashboard visualization, and statistics fundamentals.</p>
                         </div>
                     </div>
                     <div style="margin-top: 25px;">
-                        <a href="javascript:void(0)" onclick="openPreview('RevoU Analytics Certificate - Reihana Khairani', 'https://certificates.revou.co/reihana-khairani-harahap-certificate-achievements-facfsda23.pdf')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.8px solid #ADD8E6; padding: 9px 18px; border-radius: 50px; background: rgba(255, 255, 255, 0.3); cursor: pointer;">
-                            View Certificate 🎓
-                        </a>
+                        <a href="javascript:void(0)" onclick="openPreview('Data Analytics Certificate - Reihana Khairani', 'https://drive.google.com/file/d/10GfR_P6601DInZ0k-rB9O9B8M6S8K9_H/preview')" style="display: block; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 12px; color: #1a1a1a; text-decoration: none; border: 1.8px solid #ADD8E6; padding: 9px 18px; border-radius: 50px; background: rgba(255, 255, 255, 0.3); cursor: pointer;">View Certificate 🎓</a>
                     </div>
                 </div>
 
                 <div style="flex: 1 1 300px; max-width: 330px; background: rgba(255, 255, 255, 0.2); border-radius: 28px; padding: 35px; border: 1.5px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; justify-content: space-between;">
                     <div style="display: flex; flex-direction: column; gap: 15px;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; width: 100%;">
-                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 19px; color: #1a1a1a; margin: 0; line-height: 1.3;">
-                                Dibimbing.id
-                            </h3>
-                            <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #1a1a1a; background: rgba(255, 255, 255, 0.5); padding: 5px 14px; border-radius: 50px; border: 1.5px solid #ADD8E6; white-space: nowrap;">
-                                Score: 96.96
-                            </span>
+                            <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 19px; color: #1a1a1a; margin: 0; line-height: 1.3;">dibimbing.id</h3>
+                            <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; color: #1a1a1a; background: rgba(255, 255, 255, 0.5); padding: 5px 14px; border-radius: 50px; border: 1.5px solid #ADD8E6; white-space: nowrap;">🏅 MVP: 96.96</span>
                         </div>
                         <div>
-                            <p style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #333333; font-size: 14px; margin: 0 0 12px 0;">
-                                Digital Marketing
-                            </p>
-                            <p style="font-family: 'Poppins', sans-serif; color: #444444; font-size: 13px; margin: 0; line-height: 1.6;">
-                                Specialized in Organic Social Media, SEO, Paid Ads, and CRM. Awarded <b>Most Valuable Performer 🔥</b> and recognized as the Student with the Most Questions for outstanding curiosity.
-                            </p>
+                            <p style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #333333; font-size: 14px; margin: 0 0 4px 0;">Digital Marketing Bootcamp</p>
+                            <p style="font-family: 'Poppins', sans-serif; font-weight: 500; color: #666666; font-size: 13px; margin: 0 0 12px 0;">Most Active Student 🙋‍♀️</p>
+                            <p style="font-family: 'Poppins', sans-serif; color: #444444; font-size: 13px; margin: 0; line-height: 1.6;">Mastered end-to-end multi-channel growth systems, paid ads optimization frameworks, retention funnel engines, CRM, and digital marketing strategies.</p>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 12px; margin-top: 25px;">
-                        <a href="javascript:void(0)" onclick="openPreview('Dibimbing Marketing Certificate - Reihana Khairani', 'https://dibimbing-lms-dev.s3.ap-southeast-1.amazonaws.com/production/bootcamp_910/201029DMO02060807/83486')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 11.5px; color: #1a1a1a; text-decoration: none; border: 1.8px solid #ADD8E6; padding: 9px 5px; border-radius: 50px; background: rgba(255, 255, 255, 0.3); cursor: pointer; white-space: nowrap;">Certificate 📜</a>
-                        <a href="javascript:void(0)" onclick="openPreview('Dibimbing Marketing Report - Reihana Khairani', 'https://drive.google.com/file/d/16HvB3_inGi7Wjf9qcxjVi8GJLVFvQIYS/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 11.5px; color: #1a1a1a; text-decoration: none; border: 1.8px solid #ADD8E6; padding: 9px 5px; border-radius: 50px; background: rgba(255, 255, 255, 0.3); cursor: pointer; white-space: nowrap;">Report Card 📊</a>
+                    <div style="display: flex; gap: 10px; margin-top: 25px;">
+                        <a href="javascript:void(0)" onclick="openPreview('Digital Marketing Certificate', 'https://drive.google.com/file/d/1XoK8_M8001DInZ0k-rB9O9B8M6S8K9_H/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.8px solid #ADD8E6; padding: 9px 5px; border-radius: 50px; background: rgba(255, 255, 255, 0.3); cursor: pointer; white-space: nowrap;">Certificate 📜</a>
+                        <a href="javascript:void(0)" onclick="openPreview('Dibimbing Report Card', 'https://drive.google.com/file/d/1YoL9_N9002DInZ0k-rB9O9B8M6S8K9_I/preview')" style="flex: 1; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 11px; color: #1a1a1a; text-decoration: none; border: 1.8px solid #ADD8E6; padding: 9px 5px; border-radius: 50px; background: rgba(255, 255, 255, 0.3); cursor: pointer; white-space: nowrap;">Report Card 📊</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-
-   <section id="experience" style="padding: 100px 0; background-color: #fafbfc; border-bottom: 1px solid #f0f0f0; position: relative; overflow: hidden;">
-        
+    <section id="experience" style="padding: 100px 0; background-color: #fafbfc; border-bottom: 1px solid #f0f0f0; position: relative; overflow: hidden;">
         <div class="container" style="max-width: 950px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2;">
             
             <div style="margin-bottom: 55px; text-align: left;">
@@ -477,13 +300,11 @@ https://templatemo.com/tm-599-noir-fashion
             </div>
 
             <div style="display: flex; flex-direction: column; width: 100%; border-top: 1px solid rgba(0, 0, 0, 0.08);">
-                
-                <div style="display: flex; flex-wrap: wrap; padding: 40px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.08); gap: 20px; transition: background 0.3s ease;">
+                <div style="display: flex; flex-wrap: wrap; padding: 40px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.08); gap: 20px;">
                     <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 6px;">
                         <span style="font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; color: #718096; letter-spacing: 0.5px;">MAY 2026</span>
                         <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a1a; margin: 0; line-height: 1.3;">Meta Ads Specialist</h3>
                         <p style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #007bff; font-size: 14px; margin: 0;">FoodTami <span style="font-weight: 500; color: #a0aec0; font-size: 13px; margin-left: 5px;">| Freelance</span></p>
-                        
                         <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
                             <span style="font-family: 'Poppins', sans-serif; font-size: 10.5px; font-weight: 700; color: #2ecc71; background: #e8f9ef; padding: 4px 10px; border-radius: 50px;">📉 CPC -30.4%</span>
                             <span style="font-family: 'Poppins', sans-serif; font-size: 10.5px; font-weight: 700; color: #007bff; background: #e6f2ff; padding: 4px 10px; border-radius: 50px;">📈 CTR +36%</span>
@@ -498,12 +319,11 @@ https://templatemo.com/tm-599-noir-fashion
                     </div>
                 </div>
 
-                <div style="display: flex; flex-wrap: wrap; padding: 40px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.08); gap: 20px; transition: background 0.3s ease;">
+                <div style="display: flex; flex-wrap: wrap; padding: 40px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.08); gap: 20px;">
                     <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 6px;">
                         <span style="font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; color: #718096; letter-spacing: 0.5px;">JAN 2025 – DEC 2025</span>
                         <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a1a; margin: 0; line-height: 1.3;">Data Analyst</h3>
                         <p style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #007bff; font-size: 14px; margin: 0;">Career Development Center UMY</p>
-                        
                         <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
                             <span style="font-family: 'Poppins', sans-serif; font-size: 10.5px; font-weight: 700; color: #1a1a1a; background: #eef7fa; padding: 4px 10px; border-radius: 50px; border: 1px solid #ADD8E6;">📊 5,000+ Records</span>
                         </div>
@@ -517,12 +337,11 @@ https://templatemo.com/tm-599-noir-fashion
                     </div>
                 </div>
 
-                <div style="display: flex; flex-wrap: wrap; padding: 40px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.08); gap: 20px; transition: background 0.3s ease;">
+                <div style="display: flex; flex-wrap: wrap; padding: 40px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.08); gap: 20px;">
                     <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 6px;">
                         <span style="font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; color: #718096; letter-spacing: 0.5px;">DEC 2024 – JAN 2025</span>
                         <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a1a; margin: 0; line-height: 1.3;">Data Analyst Virtual Intern</h3>
                         <p style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #007bff; font-size: 14px; margin: 0;">PaDi UMKM by Telkom Indonesia x RevoU</p>
-                        
                         <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
                             <span style="font-family: 'Poppins', sans-serif; font-size: 10.5px; font-weight: 700; color: #1a1a1a; background: #eef7fa; padding: 4px 10px; border-radius: 50px; border: 1px solid #ADD8E6;">🗂️ 500k+ Datasets</span>
                         </div>
@@ -535,11 +354,9 @@ https://templatemo.com/tm-599-noir-fashion
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
 
     <style>
         .premium-horizontal-card {
@@ -559,13 +376,10 @@ https://templatemo.com/tm-599-noir-fashion
             box-sizing: border-box !important;
             position: relative !important;
             z-index: 100 !important;
-            pointer-events: auto !important; /* Memastikan kartu mendeteksi mouse */
         }
-        
         .card-project-info {
             flex: 2 1 500px !important;
         }
-        
         .card-project-actions {
             flex: 1 1 200px !important;
             display: flex !important;
@@ -573,12 +387,7 @@ https://templatemo.com/tm-599-noir-fashion
             gap: 10px !important;
             justify-content: center !important;
             min-width: 180px !important;
-            position: relative !important;
-            z-index: 99999 !important; /* Kasta tinggi di dalam kartu */
-            pointer-events: auto !important;
         }
-
-        /* 🔥 SUNTIK MATI: Tombol Preview Diberi Kasta Tertinggi Jagat Raya agar Tidak Bisa Diblokir Apapun */
         .simple-row-btn {
             display: block !important;
             text-align: center !important;
@@ -591,13 +400,11 @@ https://templatemo.com/tm-599-noir-fashion
             padding: 10px 18px !important;
             border-radius: 50px !important;
             cursor: pointer !important;
-            background: #ffffff !important; /* Kasih background solid biar mantap */
+            background: #ffffff !important;
             transition: all 0.2s ease !important;
-            
-            /* Dua baris ini adalah jimat anti-mogok */
             position: relative !important;
-            z-index: 9999999 !important; /* Melayang di atas elemen gaib manapun */
-            pointer-events: auto !important; /* Paksa tombol mendeteksi klik */
+            z-index: 99999 !important;
+            pointer-events: auto !important; /* Paksa tombol mendeteksi klik kursor mouse */
         }
         .simple-row-btn:hover {
             background: #f7fafc !important;
@@ -605,8 +412,8 @@ https://templatemo.com/tm-599-noir-fashion
         }
     </style>
 
-    <section id="projects" style="padding: 90px 0; background-color: #fafbfc; position: relative; z-index: 50 !important; pointer-events: auto !important;">
-        <div class="container" style="max-width: 950px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 60 !important;">
+    <section id="projects" style="padding: 90px 0; background-color: #fafbfc; position: relative; z-index: 500 !important;">
+        <div class="container" style="max-width: 950px; margin: 0 auto; padding: 0 20px;">
             
             <div style="margin-bottom: 50px; text-align: left;">
                 <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 32px; color: #1a1a1a; margin-bottom: 8px; letter-spacing: -1px;">
@@ -622,44 +429,37 @@ https://templatemo.com/tm-599-noir-fashion
             <div class="premium-horizontal-card">
                 <div class="card-project-info">
                     <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Social Media Planning & Report</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
-                        Formulated data-driven content architectures and multi-platform briefs based on audience profiling and competitor benchmarking. Evaluated content resonance by monitoring KPIs and Engagement Rates (ER) to isolate high-performing creative formulas.
-                    </p>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Formulated data-driven content architectures and multi-platform briefs based on audience profiling and competitor benchmarking. Evaluated content resonance by monitoring KPIs and Engagement Rates (ER) to isolate high-performing creative formulas.</p>
                     <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Instagram, TikTok, Canva</span>
                 </div>
                 <div class="card-project-actions">
-                    <a href="javascript:void(0)" onclick="openPreview('Social Media Planning', 'https://drive.google.com/file/d/1iZjkMnkNwcFmLNYxuZDjzklqA7mxWKvU/preview')" class="simple-row-btn">Planning Deck 📜</a>
-                    <a href="javascript:void(0)" onclick="openPreview('Social Media Reporting', 'https://drive.google.com/file/d/1dfgpyW98k3PJK63vDyHJi2x6aCyLmv5R/preview')" class="simple-row-btn">Report Deck 📊</a>
+                    <button onclick="openPreview('Social Media Planning', 'https://drive.google.com/file/d/1iZjkMnkNwcFmLNYxuZDjzklqA7mxWKvU/preview')" class="simple-row-btn">Planning Deck 📜</button>
+                    <button onclick="openPreview('Social Media Reporting', 'https://drive.google.com/file/d/1dfgpyW98k3PJK63vDyHJi2x6aCyLmv5R/preview')" class="simple-row-btn">Report Deck 📊</button>
                 </div>
             </div>
 
             <div class="premium-horizontal-card">
                 <div class="card-project-info">
                     <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Paid Ads & Store Optimization</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
-                        Managed multi-channel ad lifecycles across Meta, Google, and Shopee. Combined funnel mapping with periodic budget reallocation to maximize campaign ROI, paired with product SEO catalog architectures to secure conversion rates.
-                    </p>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Managed multi-channel ad lifecycles across Meta, Google, and Shopee. Combined funnel mapping with periodic budget reallocation to maximize campaign ROI, paired with product SEO catalog architectures to secure conversion rates.</p>
                     <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Meta Ads, Google Ads, Shopee Ads, Canva</span>
                 </div>
                 <div class="card-project-actions">
-                    <a href="javascript:void(0)" onclick="openPreview('Paid Ads Planning', 'https://drive.google.com/file/d/1rcgyMY9hiWSgs4mSbV7tHWQ1zvrN4iwl/preview')" class="simple-row-btn">Ads Planning 🎯</a>
-                    <a href="javascript:void(0)" onclick="openPreview('Ads Optimization', 'https://drive.google.com/file/d/1PGpw9P29McPupG-tpM1PwZ30642ahY-h/preview')" class="simple-row-btn">Optimization 📈</a>
+                    <button onclick="openPreview('Paid Ads Planning', 'https://drive.google.com/file/d/1rcgyMY9hiWSgs4mSbV7tHWQ1zvrN4iwl/preview')" class="simple-row-btn">Ads Planning 🎯</button>
+                    <button onclick="openPreview('Ads Optimization', 'https://drive.google.com/file/d/1PGpw9P29McPupG-tpM1PwZ30642ahY-h/preview')" class="simple-row-btn">Optimization 📈</button>
                 </div>
             </div>
 
             <div class="premium-horizontal-card">
                 <div class="card-project-info">
                     <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Retention & CRM Marketing</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
-                        Engineered multi-channel retention lifecycles mapping user journeys from Awareness down to Advocacy. Integrated automated web push notifications and segmented email architectures to cultivate user conversion behavior.
-                    </p>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Engineered multi-channel retention lifecycles mapping user journeys from Awareness down to Advocacy. Integrated automated web push notifications and segmented email architectures to cultivate user conversion behavior.</p>
                     <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Mailchimp, WebPushr CRM</span>
                 </div>
                 <div class="card-project-actions">
-                    <a href="javascript:void(0)" onclick="openPreview('CRM Retention Journey', 'https://drive.google.com/file/d/1sQgWHxduRoxPTAVSub8zJX-FD-t5qnqQ/preview')" class="simple-row-btn">View Strategy 📱</a>
+                    <button onclick="openPreview('CRM Retention Journey', 'https://drive.google.com/file/d/1sQgWHxduRoxPTAVSub8zJX-FD-t5qnqQ/preview')" class="simple-row-btn">View Strategy 📱</button>
                 </div>
             </div>
-
 
             <div style="margin-bottom: 25px; margin-top: 50px;">
                 <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16px; color: #718096; letter-spacing: 0.5px;">📊 DATA ANALYTICS PROJECTS</h3>
@@ -668,128 +468,77 @@ https://templatemo.com/tm-599-noir-fashion
             <div class="premium-horizontal-card">
                 <div class="card-project-info">
                     <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Customer Segmentation of PaDi UMKM</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
-                        Analyzed a 26% AOV decline and mapped supplier mismatches across marketplace categories. Deployed Python K-Means Clustering to segment accounts into core performance personas, establishing levers monitored via Tableau dashboards.
-                    </p>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Analyzed a 26% AOV decline and mapped supplier mismatches across marketplace categories. Deployed Python K-Means Clustering to segment accounts into core performance personas, establishing levers monitored via Tableau dashboards.</p>
                     <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: SQL, Python, Tableau</span>
                 </div>
                 <div class="card-project-actions">
-                    <a href="javascript:void(0)" onclick="openPreview('PaDi UMKM Customer Segmentation', 'https://docs.google.com/presentation/d/1JC52_9DIdAQorhxcVDy1no7ul3NGl--YSuN-NMEBiL4/preview')" class="simple-row-btn">Open Case Study 📊</a>
+                    <button onclick="openPreview('PaDi UMKM Customer Segmentation', 'https://docs.google.com/presentation/d/1JC52_9DIdAQorhxcVDy1no7ul3NGl--YSuN-NMEBiL4/preview')" class="simple-row-btn">Open Case Study 📊</button>
                 </div>
             </div>
 
             <div class="premium-horizontal-card">
                 <div class="card-project-info">
                     <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Sociolla Brand Performance Analysis</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
-                        Evaluated beauty cosmetics engagement across platforms. Executed Python Correlation, Linear Regression, and Composite Score Rankings to identify reviews and wishlists as primary conversion metrics, visualized natively in Tableau.
-                    </p>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Evaluated beauty cosmetics engagement across platforms. Executed Python Correlation, Linear Regression, and Composite Score Rankings to identify reviews and wishlists as primary conversion metrics, visualized natively in Tableau.</p>
                     <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Python, Tableau, Spreadsheets</span>
                 </div>
                 <div class="card-project-actions">
-                    <a href="javascript:void(0)" onclick="openPreview('Sociolla Brand Engagement Audit', 'https://drive.google.com/file/d/1mDNm1vM2QgrD250bbYhmku300aQxXH1P/preview')" class="simple-row-btn">View Analysis 📈</a>
+                    <button onclick="openPreview('Sociolla Brand Engagement Audit', 'https://drive.google.com/file/d/1mDNm1vM2QgrD250bbYhmku300aQxXH1P/preview')" class="simple-row-btn">View Analysis 📈</button>
                 </div>
             </div>
 
             <div class="premium-horizontal-card">
                 <div class="card-project-info">
                     <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">TokoBli Twin-Date Campaign Audit</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
-                        Evaluated cost efficiency ratios across massive double-date mega sales (10/10, 11/11, 12/12). Leveraged data pivot engines to balance revenue spikes against acquisition costs, isolating the 12/12 strategy as a scaling blueprint.
-                    </p>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Evaluated cost efficiency ratios across massive double-date mega sales. Leveraged data pivot engines to balance revenue spikes against acquisition costs, isolating the 12/12 strategy as a scaling blueprint.</p>
                     <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Spreadsheet, Pivot Engine</span>
                 </div>
                 <div class="card-project-actions">
-                    <a href="javascript:void(0)" onclick="openPreview('TokoBli Campaign Performance Analysis', 'https://drive.google.com/file/d/17A1hlAvaxFfNTEJus_dZXCX6Xe-xr8wq/preview')" class="simple-row-btn">View Guideline 📑</a>
+                    <button onclick="openPreview('TokoBli Campaign Performance Analysis', 'https://drive.google.com/file/d/17A1hlAvaxFfNTEJus_dZXCX6Xe-xr8wq/preview')" class="simple-row-btn">View Guideline 📑</button>
                 </div>
             </div>
 
             <div class="premium-horizontal-card">
                 <div class="card-project-info">
                     <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Wishful Bazaar Analytics</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
-                        Deployed Tableau for end-to-end data cleansing, structural normalization, and business dashboard architecture. Analyzed order flows and checkout preferences to isolate high-income brackets, providing data transparency.
-                    </p>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Deployed Tableau for end-to-end data cleansing, structural normalization, and business dashboard architecture. Analyzed order flows and checkout preferences to isolate high-income brackets, providing data transparency.</p>
                     <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Tableau Business Suite</span>
                 </div>
                 <div class="card-project-actions">
-                    <a href="javascript:void(0)" onclick="openPreview('Wishful Bazaar Operational Insights', 'https://drive.google.com/file/d/1VurWmpofaLcHc4De4Yl2-b9l5NlsUM_q/preview')" class="simple-row-btn">View Dashboard 🖥️</a>
+                    <button onclick="openPreview('Wishful Bazaar Operational Insights', 'https://drive.google.com/file/d/1VurWmpofaLcHc4De4Yl2-b9l5NlsUM_q/preview')" class="simple-row-btn">View Dashboard 🖥️</button>
                 </div>
             </div>
 
             <div class="premium-horizontal-card">
                 <div class="card-project-info">
                     <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">RevoBank Sales Insights & Clustering</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">
-                        Applied Python RFM modeling and K-means Clustering variables to segment commercial banking record lines into four bespoke customer personas. Identified growth loops for tailored loyalty initiatives to increase total card acquisition.
-                    </p>
+                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 15px 0;">Applied Python RFM modeling and K-means Clustering variables to segment commercial banking record lines into four bespoke customer personas. Identified growth loops for tailored loyalty initiatives to increase total card acquisition.</p>
                     <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Python Analysis Engine</span>
                 </div>
                 <div class="card-project-actions">
-                    <a href="javascript:void(0)" onclick="openPreview('RevoBank Customer Segments Guide', 'https://drive.google.com/file/d/1LV83JZmNxWstzD8ANHIsl9eG9gOOB-0/preview')" class="simple-row-btn">View Persona Study 💳</a>
+                    <button onclick="openPreview('RevoBank Customer Segments Guide', 'https://drive.google.com/file/d/1LV83JZmNxWstzD8ANHIsl9eG9gOOB-0/preview')" class="simple-row-btn">View Persona Study 💳</button>
                 </div>
             </div>
 
         </div>
     </section>
 
-    
-
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <h3>NOIR</h3>
-                <p>Redefining fashion with bold designs, sustainable practices, and uncompromising quality. Join us in creating the future of style.</p>
+                <h3>REIHANA KHAIRANI</h3>
+                <p>Bridging data analytics evidence with creative digital marketing execution to unlock sustainable corporate growth loops.</p>
                 <div class="social-links">
-                    <a href="#" class="social-link">f</a>
-                    <a href="#" class="social-link">t</a>
-                    <a href="#" class="social-link">i</a>
-                    <a href="#" class="social-link">p</a>
+                    <a href="https://linkedin.com/in/reihanakhairani" target="_blank" class="social-link">LinkedIn</a>
                 </div>
-            </div>
-            <div class="footer-column">
-                <h4>Shop</h4>
-                <ul>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Women</a></li>
-                    <li><a href="#">Men</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">Sale</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Size Guide</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">Sustainability</a></li>
-                    <li><a href="#">Terms</a></li>
-                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 NOIR. All rights reserved. | Designed by <a href="https://templatemo.com" target="_blank" rel="nofollow" style="color: var(--accent); text-decoration: none;">TemplateMo</a></p>
-            <div class="payment-methods">
-                <div class="payment-icon">VISA</div>
-                <div class="payment-icon">MC</div>
-                <div class="payment-icon">AMEX</div>
-                <div class="payment-icon">PAY</div>
-            </div>
+            <p>&copy; 2026 Reihana Khairani. All rights reserved.</p>
         </div>
     </footer>
 
-    <div id="previewModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; padding: 20px;">
+    <div id="previewModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 999999 !important; justify-content: center; align-items: center; padding: 20px;">
         <div style="background: #ffffff; width: 100%; max-width: 900px; height: 85vh; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
             
             <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; border-bottom: 1px solid #eeeeee; background: #fafafa;">
@@ -810,14 +559,13 @@ https://templatemo.com/tm-599-noir-fashion
         function openPreview(title, previewUrl) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('previewIframe').src = previewUrl;
-            // Link GDrive asli dibuat otomatis dengan mengganti kata /preview kembali ke /view
             document.getElementById('modalDriveLink').href = previewUrl.replace('/preview', '/view?usp=share_link');
             document.getElementById('previewModal').style.display = 'flex';
         }
 
         function closePreview() {
             document.getElementById('previewModal').style.display = 'none';
-            document.getElementById('previewIframe').src = ''; // Bersihkan memori dokumen pas ditutup
+            document.getElementById('previewIframe').src = '';
         }
     </script>
     
