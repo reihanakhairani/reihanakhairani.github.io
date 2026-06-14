@@ -395,114 +395,117 @@
         }
     </style>
 
-    <section id="projects" style="padding: 90px 0; background-color: #fafbfc; position: relative; z-index: 500 !important;">
+    <section id="projects" style="padding: 90px 0; background-color: #fafbfc; position: relative; z-index: 50 !important;">
+        
+        <input type="radio" id="filter-marketing" name="project-filter-system" style="display: none;">
+        <input type="radio" id="filter-analytics" name="project-filter-system" style="display: none;">
+
         <div class="container" style="max-width: 950px; margin: 0 auto; padding: 0 20px;">
             
-            <div style="margin-bottom: 50px; text-align: left;">
-                <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 32px; color: #1a1a1a; margin-bottom: 8px; letter-spacing: -1px;">
-                    Featured Portfolio Projects
-                </h2>
-                <div style="width: 45px; height: 4px; background-color: #ADD8E6; border-radius: 2px;"></div>
+            <div style="text-align: center; margin-bottom: 45px;">
+                <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 32px; color: #1a1a1a; margin-bottom: 8px; letter-spacing: -1px;">Featured Portfolio Projects</h2>
+                <div style="width: 45px; height: 4px; background-color: #ADD8E6; border-radius: 2px; margin: 0 auto 12px auto;"></div>
+                <p style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #718096; margin: 0;">Select a category to filter or view all works below</p>
             </div>
 
-            <div style="margin-bottom: 25px; margin-top: 10px;">
-                <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16px; color: #718096; letter-spacing: 0.5px;">📢 DIGITAL MARKETING PROJECTS</h3>
+            <div class="interactive-tab-bar" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 50px; position: relative; z-index: 99999 !important; pointer-events: auto !important;">
+                <label for="filter-marketing" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 12px 28px; border-radius: 8px; cursor: pointer !important; display: inline-block; pointer-events: auto !important; user-select: none;">📢 Digital Marketing</label>
+                <label for="filter-analytics" style="font-family: 'Poppins', sans-serif !important; font-weight: 600; font-size: 13px; color: #4a5568; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 12px 28px; border-radius: 8px; cursor: pointer !important; display: inline-block; pointer-events: auto !important; user-select: none;">📊 Data Analytics</label>
             </div>
 
-            <div class="premium-horizontal-card">
-                <div class="card-project-info">
-                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Social Media Planning & Report</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Formulated data-driven content architectures and multi-platform briefs based on audience profiling and competitor benchmarking. Evaluated content resonance by monitoring KPIs and Engagement Rates (ER) to isolate high-performing creative formulas.</p>
-                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Instagram, TikTok, Canva</span>
-                </div>
-                <div class="card-project-actions">
-                    <button onclick="openPreview('Social Media Planning', 'https://drive.google.com/file/d/1iZjkMnkNwcFmLNYxuZDjzklqA7mxWKvU/preview')" class="simple-row-btn">Planning Deck 📜</button>
-                    <button onclick="openPreview('Social Media Reporting', 'https://drive.google.com/file/d/1dfgpyW98k3PJK63vDyHJi2x6aCyLmv5R/preview')" class="simple-row-btn">Report Deck 📊</button>
-                </div>
-            </div>
+            <div id="projects-holder" style="width: 100%;">
 
-            <div class="premium-horizontal-card">
-                <div class="card-project-info">
-                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Paid Ads & Store Optimization</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Managed multi-channel ad lifecycles across Meta, Google, and Shopee. Combined funnel mapping with periodic budget reallocation to maximize campaign ROI, paired with product SEO catalog architectures to secure conversion rates.</p>
-                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Meta Ads, Google Ads, Shopee Ads, Canva</span>
+                <div class="premium-horizontal-card dm-card">
+                    <div class="card-project-info">
+                        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Social Media Planning & Report</h4>
+                        <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Formulated data-driven content architectures and multi-platform briefs based on audience profiling and competitor benchmarking. Evaluated content resonance by monitoring KPIs and Engagement Rates (ER) to isolate high-performing creative formulas.</p>
+                        <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Instagram, TikTok, Canva</span>
+                    </div>
+                    <div class="card-project-actions">
+                        <button onclick="openPreview('Social Media Planning', 'https://drive.google.com/file/d/1iZjkMnkNwcFmLNYxuZDjzklqA7mxWKvU/preview')" class="simple-row-btn">Planning Deck 📜</button>
+                        <button onclick="openPreview('Social Media Reporting', 'https://drive.google.com/file/d/1dfgpyW98k3PJK63vDyHJi2x6aCyLmv5R/preview')" class="simple-row-btn">Report Deck 📊</button>
+                    </div>
                 </div>
-                <div class="card-project-actions">
-                    <button onclick="openPreview('Paid Ads Planning', 'https://drive.google.com/file/d/1rcgyMY9hiWSgs4mSbV7tHWQ1zvrN4iwl/preview')" class="simple-row-btn">Ads Planning 🎯</button>
-                    <button onclick="openPreview('Ads Optimization', 'https://drive.google.com/file/d/1PGpw9P29McPupG-tpM1PwZ30642ahY-h/preview')" class="simple-row-btn">Optimization 📈</button>
-                </div>
-            </div>
 
-            <div class="premium-horizontal-card">
-                <div class="card-project-info">
-                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Retention & CRM Marketing</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Engineered multi-channel retention lifecycles mapping user journeys from Awareness down to Advocacy. Integrated automated web push notifications and segmented email architectures to cultivate user conversion behavior.</p>
-                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Mailchimp, WebPushr CRM</span>
+                <div class="premium-horizontal-card dm-card">
+                    <div class="card-project-info">
+                        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Paid Ads & Store Optimization</h4>
+                        <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Managed multi-channel ad lifecycles across Meta, Google, and Shopee. Combined funnel mapping with periodic budget reallocation to maximize campaign ROI, paired with product SEO catalog architectures to secure conversion rates.</p>
+                        <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Meta Ads, Google Ads, Shopee Ads, Canva</span>
+                    </div>
+                    <div class="card-project-actions">
+                        <button onclick="openPreview('Paid Ads Planning', 'https://drive.google.com/file/d/1rcgyMY9hiWSgs4mSbV7tHWQ1zvrN4iwl/preview')" class="simple-row-btn">Ads Planning 🎯</button>
+                        <button onclick="openPreview('Ads Optimization', 'https://drive.google.com/file/d/1PGpw9P29McPupG-tpM1PwZ30642ahY-h/preview')" class="simple-row-btn">Optimization 📈</button>
+                    </div>
                 </div>
-                <div class="card-project-actions">
-                    <button onclick="openPreview('CRM Retention Journey', 'https://drive.google.com/file/d/1sQgWHxduRoxPTAVSub8zJX-FD-t5qnqQ/preview')" class="simple-row-btn">View Strategy 📱</button>
-                </div>
-            </div>
 
-            <div style="margin-bottom: 25px; margin-top: 50px;">
-                <h3 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16px; color: #718096; letter-spacing: 0.5px;">📊 DATA ANALYTICS PROJECTS</h3>
-            </div>
+                <div class="premium-horizontal-card dm-card">
+                    <div class="card-project-info">
+                        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Retention & CRM Marketing</h4>
+                        <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Engineered multi-channel retention lifecycles mapping user journeys from Awareness down to Advocacy. Integrated automated web push notifications and segmented email architectures to cultivate user conversion behavior.</p>
+                        <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Mailchimp, WebPushr CRM</span>
+                    </div>
+                    <div class="card-project-actions">
+                        <button onclick="openPreview('CRM Retention Journey', 'https://drive.google.com/file/d/1sQgWHxduRoxPTAVSub8zJX-FD-t5qnqQ/preview')" class="simple-row-btn">View Strategy 📱</button>
+                    </div>
+                </div>
 
-            <div class="premium-horizontal-card">
-                <div class="card-project-info">
-                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Customer Segmentation of PaDi UMKM</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Analyzed a 26% AOV decline and mapped supplier mismatches across marketplace categories. Deployed Python K-Means Clustering to segment accounts into core performance personas, establishing levers monitored via Tableau dashboards.</p>
-                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: SQL, Python, Tableau</span>
+                <div class="premium-horizontal-card da-card">
+                    <div class="card-project-info">
+                        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Customer Segmentation of PaDi UMKM</h4>
+                        <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Analyzed a 26% AOV decline and mapped supplier mismatches across marketplace categories. Deployed Python K-Means Clustering to segment accounts into core performance personas, establishing levers monitored via Tableau dashboards.</p>
+                        <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: SQL, Python, Tableau</span>
+                    </div>
+                    <div class="card-project-actions">
+                        <button onclick="openPreview('PaDi UMKM Customer Segmentation', 'https://docs.google.com/presentation/d/1JC52_9DIdAQorhxcVDy1no7ul3NGl--YSuN-NMEBiL4/preview')" class="simple-row-btn">Open Case Study 📊</button>
+                    </div>
                 </div>
-                <div class="card-project-actions">
-                    <button onclick="openPreview('PaDi UMKM Customer Segmentation', 'https://docs.google.com/presentation/d/1JC52_9DIdAQorhxcVDy1no7ul3NGl--YSuN-NMEBiL4/preview')" class="simple-row-btn">Open Case Study 📊</button>
-                </div>
-            </div>
 
-            <div class="premium-horizontal-card">
-                <div class="card-project-info">
-                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Sociolla Brand Performance Analysis</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Evaluated beauty cosmetics engagement across platforms. Executed Python Correlation, Linear Regression, and Composite Score Rankings to identify reviews and wishlists as primary conversion metrics, visualized natively in Tableau.</p>
-                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Python, Tableau, Spreadsheets</span>
+                <div class="premium-horizontal-card da-card">
+                    <div class="card-project-info">
+                        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Sociolla Brand Performance Analysis</h4>
+                        <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Evaluated beauty cosmetics engagement across platforms. Executed Python Correlation, Linear Regression, and Composite Score Rankings to identify reviews and wishlists as primary conversion metrics, visualized natively in Tableau.</p>
+                        <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Python, Tableau, Spreadsheets</span>
+                    </div>
+                    <div class="card-project-actions">
+                        <button onclick="openPreview('Sociolla Brand Engagement Audit', 'https://drive.google.com/file/d/1mDNm1vM2QgrD250bbYhmku300aQxXH1P/preview')" class="simple-row-btn">View Analysis 📈</button>
+                    </div>
                 </div>
-                <div class="card-project-actions">
-                    <button onclick="openPreview('Sociolla Brand Engagement Audit', 'https://drive.google.com/file/d/1mDNm1vM2QgrD250bbYhmku300aQxXH1P/preview')" class="simple-row-btn">View Analysis 📈</button>
-                </div>
-            </div>
 
-            <div class="premium-horizontal-card">
-                <div class="card-project-info">
-                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">TokoBli Twin-Date Campaign Audit</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Evaluated cost efficiency ratios across massive double-date mega sales. Leveraged data pivot engines to balance revenue spikes against acquisition costs, isolating the 12/12 strategy as a scaling blueprint.</p>
-                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Spreadsheet, Pivot Engine</span>
+                <div class="premium-horizontal-card da-card">
+                    <div class="card-project-info">
+                        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">TokoBli Twin-Date Campaign Audit</h4>
+                        <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Evaluated cost efficiency ratios across massive double-date mega sales. Leveraged data pivot engines to balance revenue spikes against acquisition costs, isolating the 12/12 strategy as a scaling blueprint.</p>
+                        <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Spreadsheet, Pivot Engine</span>
+                    </div>
+                    <div class="card-project-actions">
+                        <button onclick="openPreview('TokoBli Campaign Performance Analysis', 'https://drive.google.com/file/d/17A1hlAvaxFfNTEJus_dZXCX6Xe-xr8wq/preview')" class="simple-row-btn">View Guideline 📑</button>
+                    </div>
                 </div>
-                <div class="card-project-actions">
-                    <button onclick="openPreview('TokoBli Campaign Performance Analysis', 'https://drive.google.com/file/d/17A1hlAvaxFfNTEJus_dZXCX6Xe-xr8wq/preview')" class="simple-row-btn">View Guideline 📑</button>
-                </div>
-            </div>
 
-            <div class="premium-horizontal-card">
-                <div class="card-project-info">
-                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Wishful Bazaar Analytics</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Deployed Tableau for end-to-end data cleansing, structural normalization, and business dashboard architecture. Analyzed order flows and checkout preferences to isolate high-income brackets, providing data transparency.</p>
-                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Tableau Business Suite</span>
+                <div class="premium-horizontal-card da-card">
+                    <div class="card-project-info">
+                        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">Wishful Bazaar Analytics</h4>
+                        <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 12px 0;">Deployed Tableau for end-to-end data cleansing, structural normalization, and business dashboard architecture. Analyzed order flows and checkout preferences to isolate high-income brackets, providing data transparency.</p>
+                        <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Tableau Business Suite</span>
+                    </div>
+                    <div class="card-project-actions">
+                        <button onclick="openPreview('Wishful Bazaar Operational Insights', 'https://drive.google.com/file/d/1VurWmpofaLcHc4De4Yl2-b9l5NlsUM_q/preview')" class="simple-row-btn">View Dashboard 🖥️</button>
+                    </div>
                 </div>
-                <div class="card-project-actions">
-                    <button onclick="openPreview('Wishful Bazaar Operational Insights', 'https://drive.google.com/file/d/1VurWmpofaLcHc4De4Yl2-b9l5NlsUM_q/preview')" class="simple-row-btn">View Dashboard 🖥️</button>
-                </div>
-            </div>
 
-            <div class="premium-horizontal-card">
-                <div class="card-project-info">
-                    <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 8px 0;">RevoBank Sales Insights & Clustering</h4>
-                    <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 15px 0;">Applied Python RFM modeling and K-means Clustering variables to segment commercial banking record lines into four bespoke customer personas. Identified growth loops for tailored loyalty initiatives to increase total card acquisition.</p>
-                    <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Python Analysis Engine</span>
+                <div class="premium-horizontal-card da-card">
+                    <div class="card-project-info">
+                        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a1a; margin: 0 0 10px 0;">RevoBank Sales Insights & Clustering</h4>
+                        <p style="font-family: 'Poppins', sans-serif; color: #4a5568; font-size: 13.5px; line-height: 1.6; margin: 0 0 15px 0;">Applied Python RFM modeling and K-means Clustering variables to segment commercial banking record lines into four bespoke customer personas. Identified growth loops for tailored loyalty initiatives to increase total card acquisition.</p>
+                        <span style="font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #a0aec0;">🛠️ Tools: Python Analysis Engine</span>
+                    </div>
+                    <div class="card-project-actions">
+                        <button onclick="openPreview('RevoBank Customer Segments Guide', 'https://drive.google.com/file/d/1LV83JZmNxWstzD8ANHIsl9eG9gOOB-0/preview')" class="simple-row-btn">View Persona Study 💳</button>
+                    </div>
                 </div>
-                <div class="card-project-actions">
-                    <button onclick="openPreview('RevoBank Customer Segments Guide', 'https://drive.google.com/file/d/1LV83JZmNxWstzD8ANHIsl9eG9gOOB-0/preview')" class="simple-row-btn">View Persona Study 💳</button>
-                </div>
-            </div>
 
+            </div>
         </div>
     </section>
 
@@ -512,12 +515,12 @@
                 <h3>REIHANA KHAIRANI</h3>
                 <p>Bridging data analytics evidence with creative digital marketing execution to unlock sustainable corporate growth loops.</p>
                 <div class="social-links">
-                    <a href="https://linkedin.com/in/reihanakhairani" target="_blank" class="social-link">LinkedIn</a>
+                    <a href="https://linkedin.com/in/reihanakhairani" target="_blank" class="social-link">LinkedIn ↗</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Reihana Khairani. All rights reserved.</p>
+            <p>© 2026 Reihana Khairani. All rights reserved. | Designed by <a href="https://templatemo.com" target="_blank" rel="nofollow" style="color: inherit; text-decoration: underline;">TemplateMo</a></p>
         </div>
     </footer>
 
