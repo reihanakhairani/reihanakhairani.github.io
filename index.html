@@ -1,20 +1,3 @@
-<section class="hero" id="home">
-    ...
-    <div class="hero-left">...</div>
-    <div class="hero-right">...</div>
-    ```
-
-Karena tag `</section>` milik Hero paling atas kelupaan ditutup, browser membaca bahwa **seluruh area Ticker Logo dan area Project kamu dianggap masih menjadi bagian dari area Hero paling atas**. Alhasil, lapisan transparan animasi Hero meluber ke bawah dan memblokir seluruh klik mouse kamu, sehingga tombol project di kasta bawah gak akan pernah bisa mendeteksi sentuhan jari rekruter!
-
----
-
-### 🛠️ Solusi Instan (Tinggal Copas Utuh)
-
-Aku udah beresin susunannya secara total di bawah ini. Tag Hero sudah aku tutup secara resmi (`</section>`), susunan *Z-Index* tombol project sudah diperkuat, dan format kodenya memanjang kesamping seimbang sesuai seleramu yang bersih dan anti-pusing!
-
-Yuk, **blok semua kode di dalam file `index.html` kamu dari baris pertama (`<!DOCTYPE html>`) sampai baris paling terakhir (`</html>`)**, lalu **ganti total** dengan satu gelondong kode suci pembetulan ini:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
