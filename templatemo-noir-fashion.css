@@ -387,7 +387,7 @@ nav.scrolled {
 	height: 800px;
 	top: -200px;
 	left: -200px;
-	background: radial-gradient(circle, rgba(173, 216, 230, 0.7) 0%, rgba(230, 242, 247, 0.4) 50%, rgba(255, 255, 255, 0) 70%);
+	background: radial-gradient(circle, rgba(255, 209, 220, 0.7) 0%, rgba(230, 242, 247, 0.4) 50%, rgba(255, 255, 255, 0) 70%);
 	border-radius: 43% 57% 70% 30% / 45% 45% 55% 55%; /* Bikin bentuknya gak simetris kayak lidah api */
 	animation: flameMovement 12s linear infinite alternate;
 	filter: blur(40px); /* Biar haluuus banget blending-nya */
@@ -401,7 +401,7 @@ nav.scrolled {
 	height: 700px;
 	bottom: -150px;
 	right: -100px;
-	background: radial-gradient(circle, rgba(173, 216, 230, 0.6) 0%, rgba(240, 248, 255, 0.4) 60%, rgba(255, 255, 255, 0) 80%);
+	background: radial-gradient(circle, rgba(255, 209, 220, 0.6) 0%, rgba(240, 248, 255, 0.4) 60%, rgba(255, 255, 255, 0) 80%);
 	border-radius: 50% 40% 60% 40% / 40% 50% 40% 60%;
 	animation: flameMovement 18s linear infinite alternate-reverse;
 	filter: blur(50px);
@@ -412,22 +412,22 @@ nav.scrolled {
 	0% {
 		transform: translate(0, 0) rotate(0deg) scale(1);
 		border-radius: 43% 57% 70% 30% / 45% 45% 55% 55%;
-		box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.6);
+		box-shadow: 0 0 0 0 rgba(255, 209, 220, 0.6);
 	}
 	33% {
 		transform: translate(50px, 40px) rotate(30deg) scale(1.05);
 		border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
-		box-shadow: 0 0 20px 6px rgba(173, 216, 230, 0.4);
+		box-shadow: 0 0 20px 6px rgba(255, 209, 220, 0.4);
 	}
 	66% {
 		transform: translate(-30px, 60px) rotate(-20deg) scale(0.98);
 		border-radius: 50% 50% 30% 70% / 60% 30% 70% 40%;
-		box-shadow: 0 0 0 0 rgba(173, 216, 230, 0);
+		box-shadow: 0 0 0 0 rgba(255, 209, 220, 0);
 	}
 	100% {
 		transform: translate(20px, -20px) rotate(15deg) scale(1);
 		border-radius: 43% 57% 70% 30% / 45% 45% 55% 55%;
-		box-shadow: 0 0 20px 12px rgba(173, 216, 230, 0);
+		box-shadow: 0 0 20px 12px rgba(255, 209, 220, 0);
 	}
 }
 
@@ -598,13 +598,13 @@ nav.scrolled {
 
 /* TOMBOL PRIMARY (VIEW CV): Efek Kaca Cair Pastel Blue */
 .cta-button.primary {
-    background: rgba(173, 216, 230, 0.5) !important; /* Biru muda transparan glass */
+    background: rgba(255, 209, 220, 0.5) !important; /* Biru muda transparan glass */
     color: #1a1a1a !important; 
     font-weight: 600;
-    border: 1.5px solid #ADD8E6 !important;
+    border: 1.5px solid #FFD1DC !important;
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
-    box-shadow: 0 4px 15px rgba(173, 216, 230, 0.15) !important;
+    box-shadow: 0 4px 15px rgba(255, 209, 220, 0.15) !important;
 }
 
 .cta-button.primary::before {
@@ -631,24 +631,24 @@ nav.scrolled {
 	background: rgba(144, 238, 144, 0.6) !important; /* Transisi ke Hijau Mint Pastel Lembut */
 	border-color: #90ee90 !important;
 	color: #1a1a1a !important; /* Tulisan di dalam tombol dijamin tetep hitam tegas kebaca */
-	box-shadow: 0 10px 25px rgba(173, 216, 230, 0.35) !important; /* Pendaran bayangan biru muda adem */
+	box-shadow: 0 10px 25px rgba(255, 209, 220, 0.35) !important; /* Pendaran bayangan biru muda adem */
 }
 
 /* TOMBOL OUTLINE (VIEW PORTFOLIO) */
 .cta-button.outline {
 	background: rgba(255, 255, 255, 0.2) !important;
 	color: #1a1a1a !important; /* Teks dibikin abu-abu gelap biar kontras di layar putih */
-	border: 1.5px solid rgba(173, 216, 230, 0.6) !important;
+	border: 1.5px solid rgba(255, 209, 220, 0.6) !important;
 	backdrop-filter: blur(10px) !important;
 	-webkit-backdrop-filter: blur(10px) !important;
 }
 
 /* INTERAKSI HOVER OUTLINE: Ikutan Cerah */
 .cta-button.outline:hover {
-	background: rgba(173, 216, 230, 0.4) !important;
-	border-color: #ADD8E6 !important;
+	background: rgba(255, 209, 220, 0.4) !important;
+	border-color: #FFD1DC !important;
 	transform: translateY(-3px) !important;
-	box-shadow: 0 10px 25px rgba(173, 216, 230, 0.2) !important;
+	box-shadow: 0 10px 25px rgba(255, 209, 220, 0.2) !important;
 }
 
 .hero-right {
@@ -1449,7 +1449,7 @@ nav.scrolled {
 	outline: none;
 	background: #ffffff;
 	border-color: var(--accent); /* Garis tepi otomatis menyala jadi BIRU MUDA pilihanmu */
-	box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Efek glow tipis warna biru muda */
+	box-shadow: 0 0 10px rgba(255, 209, 220, 0.5); /* Efek glow tipis warna biru muda */
 }
 
 .form-group input::placeholder,
@@ -2045,7 +2045,7 @@ body::before, body::after {
     content: ""; position: fixed; width: 450px; height: 450px; border-radius: 50%;
     z-index: -2; filter: blur(130px); opacity: 0.28; pointer-events: none; 
 }
-body::before { background: #ADD8E6; top: 15%; right: -10%; }
+body::before { background: #FFD1DC; top: 15%; right: -10%; }
 body::after { background: #90ee90; bottom: 15%; left: -10%; }
 
 /* 2. Navbar Liquid Glass Transparan */
@@ -2102,15 +2102,15 @@ body::after { background: #90ee90; bottom: 15%; left: -10%; }
 /* 3. Logika Matematika Animasi Denyut Aura Pastel Blue */
 @keyframes liquidPastelGlow {
     0% {
-        box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.6);
+        box-shadow: 0 0 0 0 rgba(255, 209, 220, 0.6);
         transform: scale(1);
     }
     50% {
-        box-shadow: 0 0 0 12px rgba(173, 216, 230, 0);
+        box-shadow: 0 0 0 12px rgba(255, 209, 220, 0);
         transform: scale(1.02); /* Membesar super tipis dengan halus */
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(173, 216, 230, 0);
+        box-shadow: 0 0 0 0 rgba(255, 209, 220, 0);
         transform: scale(1);
     }
 }
@@ -2124,5 +2124,5 @@ a.cta-button.primary:hover {
     background: rgba(144, 238, 144, 0.7) !important; /* Paksa jadi Hijau Mint Pastel */
     color: #1a1a1a !important; /* Paksa teksnya tetep gelap biar kebaca */
     border-color: #90ee90 !important;
-    box-shadow: 0 10px 25px rgba(173, 216, 230, 0.4) !important;
+    box-shadow: 0 10px 25px rgba(255, 209, 220, 0.4) !important;
 }
