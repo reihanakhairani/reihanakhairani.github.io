@@ -2037,16 +2037,16 @@ footer {
 }
 
 /* ==========================================================================
-   OVERRIDE: CUSTOM REIHANA KHAIRANI (LIQUID GLASS & PASTEL ORBS)
+   OVERRIDE: CUSTOM REIHANA KHAIRANI (ROSE GOLD GLASS & CHAMPAGNE ORBS)
    ========================================================================== */
 
-/* 1. Efek Bola Cahaya Latar Belakang */
+/* 1. Efek Bola Cahaya Latar Belakang - Anggun & Hangat */
 body::before, body::after {
     content: ""; position: fixed; width: 450px; height: 450px; border-radius: 50%;
-    z-index: -2; filter: blur(130px); opacity: 0.28; pointer-events: none; 
+    z-index: -2; filter: blur(130px); opacity: 0.22; pointer-events: none; 
 }
-body::before { background: #FFD1DC; top: 15%; right: -10%; }
-body::after { background: #90ee90; bottom: 15%; left: -10%; }
+body::before { background: #FFD1DC; top: 15%; right: -10%; } /* Rose Gold */
+body::after { background: #FFF4E0; bottom: 15%; left: -10%; }  /* Champagne Warm Ivory */
 
 /* 2. Navbar Liquid Glass Transparan */
 .navbar {
@@ -2074,40 +2074,45 @@ body::after { background: #90ee90; bottom: 15%; left: -10%; }
 
 
 /* ==========================================================================
-   EFEK PASTEL LIQUID GLOW - VIEW CV & PORTFOLIO REIHANA
+   EFEK LURUS PERBAIKAN TOMBOL HOVER PRIMARY & OUTLINE REIHANA
    ========================================================================== */
 
-/* 1. Gaya dasar tombol Hero: Efek kaca es transparan minimalis */
-.cta-group .cta-button.primary {
-    background: rgba(255, 255, 255, 0.6) !important; /* Kaca putih bersih semi-transparan */
-    color: #1a1a1a !important; /* Teks abu gelap biar kontras */
-    border: 1.2px solid rgba(26, 26, 26, 0.15) !important; /* Border tipis elegan */
+/* 1. Gaya dasar tombol Hero: Efek kaca es Rose Transparan */
+.cta-group .cta-button.primary,
+.cta-button.primary,
+a.cta-button.primary {
+    background: rgba(255, 209, 220, 0.35) !important; /* Rose gold transparan tipis */
+    color: #1a1a1a !important; 
+    font-weight: 600 !important;
+    border: 1.2px solid rgba(255, 209, 220, 0.6) !important; 
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
     transition: all 0.3s ease-in-out !important;
     animation: liquidPastelGlow 3s infinite ease-in-out !important;
 }
 
-/* 2. HOVER PRIMARY: Hanya naik tipis & border menyala Hijau Mint Pucat (MUTLAK ANTI-HITAM!) */
-.cta-group .cta-button.primary:hover {
+/* 2. HOVER PRIMARY & OUTLINE: Dipaksa berubah ke Putih Mutiara Hangat (MUTLAK ANTI-BIRU & ANTI-HIJAU!) */
+.cta-group .cta-button.primary:hover, 
+.cta-button.primary:hover, 
+a.cta-button.primary:hover {
     transform: translateY(-2px) !important;
-    background: rgba(255, 255, 255, 0.9) !important; /* Latar tetap cerah bening */
-    color: #1a1a1a !important; /* Teks dipaksa tetap gelap agar jelas dibaca */
-    border-color: #98FF98 !important; /* Sentuhan warna Pale Mint lembut yang estetik */
-    box-shadow: 0 8px 20px rgba(152, 255, 152, 0.25) !important; /* Pendaran aura mint super tipis */
+    background: rgba(255, 240, 245, 0.9) !important; /* Latar berubah jadi putih mutiara lembut */
+    color: #1a1a1a !important; 
+    border-color: #FFD1DC !important; /* Nyala binar Rose Gold tipis */
+    box-shadow: 0 8px 20px rgba(255, 209, 220, 0.3) !important;
     animation-play-state: paused !important;
 }
 
-/* 3. Logika Matematika Animasi Denyut Aura Pastel Blue */
+/* 3. Logika Denyut Gelombang Aura Rose Gold */
 @keyframes liquidPastelGlow {
     0% {
-        box-shadow: 0 0 0 0 rgba(255, 209, 220, 0.6);
+        box-shadow: 0 0 0 0 rgba(255, 209, 220, 0.5);
         transform: scale(1);
     }
     50% {
-        box-shadow: 0 0 0 12px rgba(255, 209, 220, 0);
-        transform: scale(1.02); /* Membesar super tipis dengan halus */
+        box-shadow: 0 0 0 10px rgba(255, 209, 220, 0);
+        transform: scale(1.015);
     }
     100% {
         box-shadow: 0 0 0 0 rgba(255, 209, 220, 0);
