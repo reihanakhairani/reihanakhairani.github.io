@@ -450,9 +450,8 @@ nav.scrolled {
 .hero-badge {
 	display: inline-block;
 	padding: 8px 20px;
-	background: rgba(255, 51, 102, 0.1);
-	border: 1px solid var(--accent);
-	color: var(--accent);
+	background: rgba(0, 0, 0, 0.03); /* Latar belakang transparan tipis */
+	border: 1px solid rgba(26, 26, 26, 0.15); /* Border abu-abu tipis minimalis */
 	font-size: 11px;
 	text-transform: uppercase;
 	letter-spacing: 3px;
@@ -465,11 +464,12 @@ nav.scrolled {
 .hero-badge::before {
 	content: '';
 	position: absolute;
-	width: 30px;
+	width: 100px;
 	height: 100%;
-	background: linear-gradient(90deg, transparent, rgba(255, 51, 102, 0.5), transparent);
-	left: -30px;
-	animation: shimmer 3s ease infinite;
+	/* Mengubah kilatan merah marun jadi kilatan cahaya putih-silver elegan */
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+	left: -100px;
+	animation: shimmer 4s ease infinite;
 }
 
 @keyframes shimmer {
