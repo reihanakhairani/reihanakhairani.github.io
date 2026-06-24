@@ -2077,28 +2077,26 @@ body::after { background: #90ee90; bottom: 15%; left: -10%; }
    EFEK PASTEL LIQUID GLOW - VIEW CV & PORTFOLIO REIHANA
    ========================================================================== */
 
-/* 1. Atur gaya dasar tombol di Hero agar seragam pastel glass */
+/* 1. Gaya dasar tombol Hero: Efek kaca es transparan minimalis */
 .cta-group .cta-button.primary {
-    background-color: rgba(255, 255, 255, 0.5) !important;
-    color: #1a1a1a !important;
-    border: 1.5px solid #ADD8E6 !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    box-shadow: 0 4px 15px rgba(173, 216, 230, 0.1) !important;
-    transition: all 0.4s ease-in-out !important;
-    
-    /* Pasang mantra animasi pendaran kaca cair */
+    background: rgba(255, 255, 255, 0.6) !important; /* Kaca putih bersih semi-transparan */
+    color: #1a1a1a !important; /* Teks abu gelap biar kontras */
+    border: 1.2px solid rgba(26, 26, 26, 0.15) !important; /* Border tipis elegan */
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+    transition: all 0.3s ease-in-out !important;
     animation: liquidPastelGlow 3s infinite ease-in-out !important;
 }
 
-/* 2. Efek interaksi saat kursor rekruter menyentuh tombolnya */
+/* 2. HOVER PRIMARY: Hanya naik tipis & border menyala Hijau Mint Pucat (MUTLAK ANTI-HITAM!) */
 .cta-group .cta-button.primary:hover {
-    background-color: #1a1a1a !important;
-    color: #ffffff !important;
-    border-color: #1a1a1a !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 25px rgba(26, 26, 26, 0.2) !important;
-    animation-play-state: paused !important; /* Hentikan kedipan pas disentuh biar tenang */
+    transform: translateY(-2px) !important;
+    background: rgba(255, 255, 255, 0.9) !important; /* Latar tetap cerah bening */
+    color: #1a1a1a !important; /* Teks dipaksa tetap gelap agar jelas dibaca */
+    border-color: #98FF98 !important; /* Sentuhan warna Pale Mint lembut yang estetik */
+    box-shadow: 0 8px 20px rgba(152, 255, 152, 0.25) !important; /* Pendaran aura mint super tipis */
+    animation-play-state: paused !important;
 }
 
 /* 3. Logika Matematika Animasi Denyut Aura Pastel Blue */
