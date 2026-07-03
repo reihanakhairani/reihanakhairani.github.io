@@ -1924,9 +1924,8 @@ footer {
     75% { transform: rotate(-0.8deg); }
     100% { transform: rotate(0deg); }
 }
-
 /* ==========================================================================
-   PERBAIKAN RESPONSIVITAS LANYARD KETIKA LAYAR LAPTOP DIKECILKAN
+   PERBAIKAN RESPONSIVITAS KETIKA LAYAR LAPTOP DIKECILKAN (LANYARD GAIB VERSION)
    ========================================================================== */
 @media screen and (max-width: 1200px) {
     /* 1. Paksa container hero menyusun ke bawah dengan jarak aman */
@@ -1948,25 +1947,21 @@ footer {
         justify-content: center !important;
     }
 
-    /* 2. Jinakkan tali lanyard biar memendek pas layar mengecil (ANTI-NABRAK TEKS!) */
+    /* 2. SULAP STRAP LANYARD HILANG TOTAL BIAR GAK NABRAK TEKS */
     .hero-right {
         max-width: 100% !important;
-        margin-top: 60px !important; /* Kasih jarak aman di bawah tombol */
+        margin-top: 30px !important; /* Jarak pas setelah tali lenyap */
         display: flex !important;
         justify-content: center !important;
     }
 
-    .lanyard-strap {
-        height: 60px !important; /* Dipotong pendek biar gak melorot nabrak teks atas */
-        top: -50px !important;   /* Posisinya digeser naik pas rapi */
-    }
-
-    .lanyard-clip {
-        top: 5px !important;
+    /* Mantra pemunah tali dan klip biar lenyap dari muka bumi pas layar mengecil */
+    .lanyard-strap, .lanyard-clip {
+        display: none !important; 
     }
 
     .id-card-wrapper {
-        margin-top: 20px !important;
+        margin-top: 0 !important; /* Naikin ID card-nya biar posisinya pas di tengah */
     }
 
     /* 3. Amankan tombol navbar atas biar gak lonjong penyok ke bawah */
