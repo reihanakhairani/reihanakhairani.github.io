@@ -1083,11 +1083,13 @@ nav.scrolled {
 
 .highlight-item {
 	padding: 25px;
-	background: rgba(255, 255, 255, 0.02);
-	border: 1px solid rgba(255, 255, 255, 0.05);
-	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.45) !important; /* Kita paksa jadi kaca transparan bening */
+	border: 1px solid rgba(156, 175, 136, 0.3) !important; /* Garis tepi sage green tipis biar estetik */
+	border-radius: 15px; /* Biar sudut kotaknya lebih tumpul estetik */
 	text-align: center;
 	transition: all 0.3s ease;
+	backdrop-filter: blur(10px) !important; /* Efek blur kaca premium */
+	-webkit-backdrop-filter: blur(10px) !important;
 }
 
 .highlight-item:hover {
