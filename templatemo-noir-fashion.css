@@ -1928,12 +1928,41 @@ footer {
    PERBAIKAN RESPONSIVITAS KETIKA LAYAR LAPTOP DIKECILKAN (LANYARD GAIB VERSION)
    ========================================================================== */
 @media screen and (max-width: 1200px) {
-    /* 1. Paksa container hero menyusun ke bawah dengan jarak aman */
+    /* === FIX TEKS NAVBAR TABRAKAN PAS LAYAR DIKECILIN === */
+    .nav-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important; 
+        gap: 10px !important;
+    }
+
+    /* 1. Perkecil jarak antar menu biar gak sesak */
+    .navbar-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 15px !important; /* Jarak renggang dikecilkan dari 35px jadi 15px biar muat */
+    }
+
+    /* 2. Perkecil ukuran font menu atas secara otomatis */
+    .navbar-nav .nav-link, .nav-links a {
+        font-size: 11px !important; /* Ukuran teks dikecilkan biar pas sama ruangan */
+        letter-spacing: 1px !important; 
+        white-space: nowrap !important;
+    }
+
+    /* 3. Jaga jarak nama logo kamu tetap aman */
+    .logo-text {
+        font-size: 20px !important; /* Logo Reihana Khairani dikecilkan sedikit */
+    }
+
+    /* 4. Paksa container hero menyusun ke bawah dengan jarak aman */
     .hero-container {
         flex-direction: column !important;
         display: flex !important;
         gap: 40px !important;
-        padding-top: 160px !important; /* Ditambah ruang atas biar gak ketutupan navbar sesak */
+        padding-top: 160px !important; 
         text-align: center !important;
     }
 
@@ -1947,29 +1976,27 @@ footer {
         justify-content: center !important;
     }
 
-    /* 2. SULAP STRAP LANYARD HILANG TOTAL BIAR GAK NABRAK TEKS */
+    /* 5. SULAP STRAP LANYARD HILANG TOTAL BIAR GAK NABRAK TEKS */
     .hero-right {
         max-width: 100% !important;
-        margin-top: 30px !important; /* Jarak pas setelah tali lenyap */
+        margin-top: 30px !important; 
         display: flex !important;
         justify-content: center !important;
     }
 
-    /* Mantra pemunah tali dan klip biar lenyap dari muka bumi pas layar mengecil */
     .lanyard-strap, .lanyard-clip {
         display: none !important; 
     }
 
     .id-card-wrapper {
-        margin-top: 0 !important; /* Naikin ID card-nya biar posisinya pas di tengah */
+        margin-top: 0 !important; 
     }
 
-    /* 3. Amankan tombol navbar atas biar gak lonjong penyok ke bawah */
     .nav-cta {
         padding: 8px 18px !important;
         border-radius: 20px !important;
         font-size: 11px !important;
-        white-space: nowrap !important; /* Paksa teksnya tetep satu baris kesamping */
+        white-space: nowrap !important; 
     }
 }
 
