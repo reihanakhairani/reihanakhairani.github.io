@@ -13,13 +13,13 @@ https://templatemo.com/tm-599-noir-fashion
 }
 
 :root {
-	--primary: #ffffff;       /* Latar belakang jadi putih bersih */
-	--accent: #FFD1DC;        /* WARNA UTAMA: Rose Gold / Pastel Peach yang anggun */
-	--accent-hover: #FFF0F5;  /* WARNA HOVER: Lavender Blush / Putih Mutiara hangat pas disentuh */
-	--text-light: #1a1a1a;    /* Teks utama abu-abu gelap agar kontras */
-	--text-muted: #666666;    /* Teks deskripsi/sekunder jadi abu-abu sedang */[cite: 1]
-	--bg-dark: #ffffff;       /* Latar belakang utama halaman */[cite: 1]
-	--bg-section: #FFF9F9;    /* Latar belakang section lain dibikin warm rose super soft */
+	--primary: #ffffff;       /* Latar belakang putih bersih */
+	--accent: #9CAF88;        /* WARNA UTAMA: Sage Green yang teduh bumi */
+	--accent-hover: #8A9D76;  /* WARNA HOVER: Sage Green yang sedikit lebih deep */
+	--text-light: #2C3531;    /* Teks utama: Abu arang gelap dengan sentuhan olive tipis */
+	--text-muted: #6B7A74;    /* Teks deskripsi: Abu-abu daun sedang */
+	--bg-dark: #ffffff;       /* Latar belakang utama halaman */
+	--bg-section: #F1F4F0;    /* Latar belakang section lain: Sage super soft yang adem */
 }
 
 html {
