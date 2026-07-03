@@ -1894,16 +1894,18 @@ footer {
    PERBAIKAN RESPONSIVITAS LANYARD KETIKA LAYAR LAPTOP DIKECILKAN
    ========================================================================== */
 @media screen and (max-width: 1200px) {
-    /* 1. Paksa container hero menyusun ke bawah biar gak tabrakan kesamping */
+    /* 1. Paksa container hero menyusun ke bawah dengan jarak aman */
     .hero-container {
         flex-direction: column !important;
-        gap: 60px !important;
-        padding-top: 130px !important;
+        display: flex !important;
+        gap: 40px !important;
+        padding-top: 160px !important; /* Ditambah ruang atas biar gak ketutupan navbar sesak */
         text-align: center !important;
     }
 
     .hero-left {
         max-width: 100% !important;
+        padding-right: 0 !important;
         text-align: center !important;
     }
 
@@ -1911,25 +1913,33 @@ footer {
         justify-content: center !important;
     }
 
-    /* 2. Turunkan lanyard ke bawah teks dan sembunyikan porsi tali atas yang berlebih */
+    /* 2. Jinakkan tali lanyard biar memendek pas layar mengecil (ANTI-NABRAK TEKS!) */
     .hero-right {
         max-width: 100% !important;
-        margin-top: 40px !important;
-        padding-top: 0 !important;
+        margin-top: 60px !important; /* Kasih jarak aman di bawah tombol */
+        display: flex !important;
+        justify-content: center !important;
     }
 
-    /* Jinakkan tali biar gak motong teks di tengah layar */
     .lanyard-strap {
-    background: #9CAF88 !important; /* Mengubah total warna tali gantungan jadi Sage Green */
-    background-color: #9CAF88 !important;
-}
+        height: 60px !important; /* Dipotong pendek biar gak melorot nabrak teks atas */
+        top: -50px !important;   /* Posisinya digeser naik pas rapi */
+    }
 
     .lanyard-clip {
-        top: 15px !important;
+        top: 5px !important;
     }
 
     .id-card-wrapper {
-        margin-top: 35px !important;
+        margin-top: 20px !important;
+    }
+
+    /* 3. Amankan tombol navbar atas biar gak lonjong penyok ke bawah */
+    .nav-cta {
+        padding: 8px 18px !important;
+        border-radius: 20px !important;
+        font-size: 11px !important;
+        white-space: nowrap !important; /* Paksa teksnya tetep satu baris kesamping */
     }
 }
 
