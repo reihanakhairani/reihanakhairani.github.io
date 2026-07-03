@@ -603,63 +603,6 @@ nav.scrolled {
 }
 
 /* ==========================================================================
-   TOMBOL UTAMA HERO: PURE SAGE GLASSMORPHISM
-   ========================================================================== */
-
-/* 1. TOMBOL PRIMARY (VIEW CV): Efek Kaca Sage Green */
-.cta-button.primary {
-    background: rgba(156, 175, 136, 0.25) !important; /* Sage transparan lembut */
-    color: #2C3531 !important; 
-    font-weight: 600;
-    border: 1.5px solid #9CAF88 !important; /* Border daun estetik */
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    box-shadow: 0 4px 15px rgba(156, 175, 136, 0.1) !important;
-}
-
-.cta-button.primary::before {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 0;
-	height: 0;
-	background: rgba(255, 255, 255, 0.4); /* Pendaran kilau putih bersih pas diklik */
-	border-radius: 50%;
-	transform: translate(-50%, -50%);
-	transition: width 0.6s, height 0.6s;
-}
-
-.cta-button.primary:hover::before {
-	width: 300px;
-	height: 300px;
-}
-
-/* HOVER PRIMARY: Transisi Mulus ke Sage Cerah Bersih */
-.cta-button.primary:hover {
-	transform: translateY(-3px) !important;
-	background: rgba(156, 175, 136, 0.8) !important; 
-	border-color: #9CAF88 !important;
-	color: #ffffff !important; /* Teks otomatis jadi putih pas di-hover biar kontras */
-	box-shadow: 0 10px 25px rgba(156, 175, 136, 0.3) !important;
-}
-
-/* 2. TOMBOL OUTLINE (VIEW PORTFOLIO): Kaca Bening Minimalis Sage Edge */
-.cta-button.outline {
-	background: rgba(255, 255, 255, 0.2) !important;
-	color: #2C3531 !important; /* Warna teks senada sage deep */
-	border: 1.5px solid rgba(156, 175, 136, 0.4) !important; /* Border tipis sage */
-	backdrop-filter: blur(10px) !important;
-	-webkit-backdrop-filter: blur(10px) !important;
-}
-
-/* HOVER OUTLINE: Transisi ke Kaca Sage Tipis */
-.cta-button.outline:hover {
-	background: rgba(156, 175, 136, 0.2) !important;
-	border-color: #9CAF88 !important;
-	transform: translateY(-3px) !important;
-	box-shadow: 0 10px 25px rgba(156, 175, 136, 0.15) !important;
-}
 
 .hero-right {
 	position: relative;
