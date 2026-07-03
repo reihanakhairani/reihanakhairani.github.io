@@ -150,18 +150,19 @@ nav.scrolled {
 }
 
 .nav-cta {
-	background: var(--accent);
+	background: var(--accent) !important; /* Memaksa tombol ikut warna sage global */
 	color: white !important;
 	padding: 10px 25px !important;
 	border-radius: 25px;
 	font-weight: 600;
 	opacity: 1 !important;
+	transition: all 0.3s ease;
 }
 
 .nav-cta:hover {
-	background: var(--accent-hover);
+	background: var(--accent-hover) !important; /* Pas disentuh otomatis menggelap jadi sage deep */
 	transform: translateY(-2px);
-	box-shadow: 0 5px 15px rgba(255, 51, 102, 0.3);
+	box-shadow: 0 5px 15px rgba(156, 175, 136, 0.3); /* Aura bayangan soft sage */
 }
 
 .nav-cta::before {
@@ -444,8 +445,8 @@ nav.scrolled {
 .hero-badge {
 	display: inline-block;
 	padding: 8px 20px;
-	background: rgba(0, 0, 0, 0.03); /* Latar belakang transparan tipis */
-	border: 1px solid rgba(26, 26, 26, 0.15); /* Border abu-abu tipis minimalis */
+	background: rgba(156, 175, 136, 0.15); /* Ganti biru jadi pendaran sage super tipis */
+	border: 1px solid rgba(156, 175, 136, 0.3); /* Border tipis warna sage */
 	font-size: 11px;
 	text-transform: uppercase;
 	letter-spacing: 3px;
@@ -1984,9 +1985,9 @@ footer {
 
     /* Jinakkan tali biar gak motong teks di tengah layar */
     .lanyard-strap {
-        height: 120px !important;
-        top: -100px !important;
-    }
+    background: #9CAF88 !important; /* Mengubah total warna tali gantungan jadi Sage Green */
+    background-color: #9CAF88 !important;
+}
 
     .lanyard-clip {
         top: 15px !important;
