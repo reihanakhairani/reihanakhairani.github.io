@@ -445,35 +445,27 @@ nav.scrolled {
 .hero-badge {
 	display: inline-block;
 	padding: 8px 20px;
-	background: rgba(156, 175, 136, 0.15); /* Ganti biru jadi pendaran sage super tipis */
-	border: 1px solid rgba(156, 175, 136, 0.3); /* Border tipis warna sage */
+	background: rgba(156, 175, 136, 0.12); /* Sage soft minimalis */
+	border: 1px solid rgba(156, 175, 136, 0.25); 
 	font-size: 11px;
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	margin-bottom: 30px;
-	animation: slideInLeft 1s ease;
-	position: relative;
-	overflow: hidden;
+	animation: slideInLeftPremium 1.2s cubic-bezier(0.25, 1, 0.5, 1) backwards;
 }
 
-.hero-badge::before {
-	content: '';
-	position: absolute;
-	width: 100px;
-	height: 100%;
-	/* Mengubah kilatan merah marun jadi kilatan cahaya putih-silver elegan */
-	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-	left: -100px;
-	animation: shimmer 4s ease infinite;
-}
+/* Hapus kilatan lama */
+.hero-badge::before { display: none; }
 
-@keyframes shimmer {
-	0% {
-		left: -30px;
+/* Mantra geser memudar premium */
+@keyframes slideInLeftPremium {
+	from {
+		transform: translateX(-30px);
+		opacity: 0;
 	}
-
-	100% {
-		left: calc(100% + 30px);
+	to {
+		transform: translateX(0);
+		opacity: 1;
 	}
 }
 
