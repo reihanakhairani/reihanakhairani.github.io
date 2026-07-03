@@ -261,9 +261,44 @@ nav.scrolled {
 		padding: 10px 30px;
 	}
 
+	/* === JINAKKAN HERO & LANYARD KHUSUS LAYAR NANGGUNG (ANTI-MELOROT!) === */
 	.hero-container {
-		padding: 0 30px;
+		padding: 160px 30px 0; /* Kasih ruang atas biar gak ketabrak navbar tumpuk */
+		display: flex !important;
+		flex-direction: column !important;
+		gap: 40px !important;
+		text-align: center !important;
 	}
+
+	.hero-left {
+		max-width: 100% !important;
+		padding-right: 0 !important;
+	}
+
+	.cta-group {
+		justify-content: center !important;
+	}
+
+	.hero-right {
+		max-width: 100% !important;
+		margin-top: 50px !important;
+		display: flex !important;
+		justify-content: center !important;
+	}
+
+	.lanyard-strap {
+		height: 60px !important; /* Kita potong paksa jadi pendek di sini */
+		top: -50px !important;   /* Geser naik biar pas di atas ID card */
+	}
+
+	.lanyard-clip {
+		top: 5px !important;
+	}
+
+	.id-card-wrapper {
+		margin-top: 20px !important;
+	}
+	/* ==================================================================== */
 
 	.hero-title {
 		font-size: 60px;
