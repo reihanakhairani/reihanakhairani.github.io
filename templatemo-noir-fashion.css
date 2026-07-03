@@ -593,13 +593,13 @@ nav.scrolled {
 
 /* TOMBOL PRIMARY (VIEW CV): Efek Kaca Premium Rose Gold */
 .cta-button.primary {
-    background: rgba(255, 209, 220, 0.4) !important; /* Kaca transparan rose gold tipis */
+    background: rgba(156, 175, 136, 0.4) !important; /* Kaca transparan rose gold tipis */
     color: #1a1a1a !important; 
     font-weight: 600;
     border: 1.5px solid #9CAF88 !important; /* Garis tepi rose gold anggun */
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
-    box-shadow: 0 4px 15px rgba(255, 209, 220, 0.15) !important;
+    box-shadow: 0 4px 15px rgba(156, 175, 136, 0.15) !important;
 }
 
 /* ==========================================================================
@@ -1402,7 +1402,7 @@ nav.scrolled {
 	outline: none;
 	background: #ffffff;
 	border-color: var(--accent); /* Garis tepi otomatis menyala jadi BIRU MUDA pilihanmu */
-	box-shadow: 0 0 10px rgba(255, 209, 220, 0.5); /* Efek glow tipis warna biru muda */
+	box-shadow: 0 0 10px rgba(156, 175, 136, 0.5); /* Efek glow tipis warna biru muda */
 }
 
 .form-group input::placeholder,
