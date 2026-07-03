@@ -596,7 +596,7 @@ nav.scrolled {
     background: rgba(255, 209, 220, 0.4) !important; /* Kaca transparan rose gold tipis */
     color: #1a1a1a !important; 
     font-weight: 600;
-    border: 1.5px solid #FFD1DC !important; /* Garis tepi rose gold anggun */
+    border: 1.5px solid #9CAF88 !important; /* Garis tepi rose gold anggun */
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
     box-shadow: 0 4px 15px rgba(255, 209, 220, 0.15) !important;
@@ -1998,7 +1998,7 @@ body::before, body::after {
     content: ""; position: fixed; width: 450px; height: 450px; border-radius: 50%;
     z-index: -2; filter: blur(130px); opacity: 0.22; pointer-events: none; 
 }
-body::before { background: #FFD1DC; top: 15%; right: -10%; } /* Rose Gold */
+body::before { background: #9CAF88; top: 15%; right: -10%; } /* Rose Gold */
 body::after { background: #FFF4E0; bottom: 15%; left: -10%; }  /* Champagne Warm Ivory */
 
 /* 2. Navbar Liquid Glass Transparan */
