@@ -1115,10 +1115,12 @@ nav.scrolled {
 	-webkit-backdrop-filter: blur(10px) !important;
 }
 
+/* Sembuhkan efek hover biar gak balik ke warna biru/aksen lama */
 .highlight-item:hover {
-	background: rgba(255, 255, 255, 0.05);
-	border-color: var(--accent);
-	transform: translateY(-5px);
+	background: rgba(156, 175, 136, 0.15) !important; /* Berubah nge-sage tipis pas disentuh */
+	border-color: rgba(156, 175, 136, 0.6) !important;
+	transform: translateY(-5px) !important; /* Tetap ngangkat halus */
+	box-shadow: 0 8px 25px rgba(156, 175, 136, 0.15) !important;
 }
 
 .highlight-icon {
